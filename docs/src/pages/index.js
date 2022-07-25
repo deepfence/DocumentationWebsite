@@ -49,9 +49,9 @@ function HeroBanner() {
   );
 }
 
-function Products() {
+function OpenSourceProducts() {
   return (
-<div>
+  <div>
     <Section title="Deepfence Open Source Projects">
       <ProductCard
         title="Deepfence ThreatMapper"
@@ -89,6 +89,13 @@ function Products() {
         docs="/flowmeter"
       />
     </Section>
+  </div>
+  );
+}
+
+function EnterpriseProducts() {
+  return (
+  <div>
     <Section title="Deepfence Enterprise Products" className="two-cols">
       <ProductCard
         title="Deepfence ThreatStryker"
@@ -111,27 +118,12 @@ function Products() {
 
 function Community() {
   return (
-    <div>
-<h1>Participate in the Deepfence Community​</h1>
-
-<Section HeadingTag="h3" className="two-cols">
-
-  <SocialCard />
-  <SwagCard />
-
-</Section>
-
-
-
-
-<h1>Learn More​</h1>
-
-YouTube
-Blog
-Webinars?
-
-
-    </div>
+  <div>
+    <Section title="Join in the Open-Source Community" className="two-cols">
+      <SocialCard />
+      <SwagCard />
+    </Section>
+  </div>
   );
 }
 
@@ -143,7 +135,8 @@ export default function HomePage() {
       <main>
         <HeroBanner />
         <div className={styles.maincontent}>
-          <Products />
+          <OpenSourceProducts />
+          <EnterpriseProducts />
           <Community />
         </div>
       </main>

@@ -420,7 +420,7 @@ a.theme-edit-this-page:hover:after {
 .product-card .footnotes div {
   display: inline-block;
   vertical-align: middle;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
   padding-bottom: 12px;
 }
 

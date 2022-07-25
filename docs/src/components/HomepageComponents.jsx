@@ -50,6 +50,9 @@ export function ProductCard({ id, icon, title, description, gh, docs, readmore }
         <div className="description">{description}</div>
         <div className="footnotes">
           { gh       && <GitHubButton href={`https://github.com/${gh}`} data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true" aria-label="Star {gh} on GitHub">GitHub</GitHubButton> }
+          &nbsp;
+          { gh       && <GitHubButton href={`https://github.com/${gh}/fork`} data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork {gh} on GitHub"></GitHubButton> }
+
           { docs     && <div class="docs"><Link to={docs}>docs</Link></div> }
           { readmore && <div class="readmore"><Link to={readmore}>more</Link></div> }
         </div>
