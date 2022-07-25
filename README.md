@@ -1,6 +1,8 @@
-# Building docs
+# Deepfence Documentation Project
 
-## Get the Skeleton Files
+## Adding docs to your own project
+
+### Get the Skeleton Files
 
 Check out the github repo you wish to add docs to.
 
@@ -61,7 +63,7 @@ You'll then want to add these files into your repository, before you initialize 
 git add `find . -type f`
 ```
 
-## Initialise Docusaurus
+### Initialise Docusaurus
 
 Initialize Docusaurus:
 
@@ -76,14 +78,23 @@ yarn
 
 Docusaurus will create a number of local temporary files which should not be tracked by git; these are excluded by the local `.gitignore`.
 
-# Do this to start the docs application
+### Start the docs application
 
 ```
 yarn start
 ```
 
-## Write your docs
+### Write your docs
 
 ```cd docs```
 
+
 You can now begin adding docs, into `docs/productname`, and edit the sidebar at `sidebar.js`. Take a look at other Deepfence products to understand the schema.
+
+
+## Building the main Deepfence Documentation Website
+
+The main website collects documentation from the various Deepfence projects (your `~repo/docs/docs/` folders) and imports the sidebar navigation you defined.  It assembles that into a single, larger Docusaurus project.
+
+See the content in [`/docs`](/docs) for how this works.
+
