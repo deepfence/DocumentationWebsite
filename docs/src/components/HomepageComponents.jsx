@@ -104,16 +104,3 @@ export function SwagCard( {} ) {
     </div>
   );
 }
-
-/*export function SwagCard( {} ) {
-  return (
-    <div className="social-card card-content">
-      <div class="swagcontainer">
-        <Link to="https://go.deepfence.io/community-monthly-swag-sign-up">
-          <img src="/img/social/swag.jpg" />
-          <
-        </Link>
-      </div>
-    </div>
-  );
-}*/
