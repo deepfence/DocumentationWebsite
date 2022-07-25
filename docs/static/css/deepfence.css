@@ -419,37 +419,36 @@ a.theme-edit-this-page:hover:after {
 
 .product-card .footnotes div {
   display: inline-block;
+  vertical-align: middle;
+  margin-left: 1rem;
+  padding-bottom: 12px;
 }
 
-.product-card .footnotes .ghstars:before {
-  content: "⭐️ ";
+.product-card .footnotes a {
+  color: var(--ifm-font-color-base);
 }
-.product-card .footnotes .ghstars {
-  padding-right: 1rem;
+.product-card .footnotes a:hover {
+  color: var(--ifm-font-color-base);
+  text-decoration: none;
 }
-.product-card .footnotes .ghlink:before {
-  content: "";
-  background: url(/img/github.svg);
+
+.product-card .footnotes .docs:before {
+  content: " ";
+  background: url(/img/docs.svg);
   background-size: contain;
   background-repeat: no-repeat;
   padding-right: 20px !important;
-  
 }
-.product-card .footnotes .ghlink {
-  padding-right: 1rem;
-}
-.product-card .footnotes .docs:before {
-  content: "📚 ";
-}
-.product-card .footnotes .docs {
-  padding-right: 1rem;
-}
+
 .product-card .footnotes .readmore:before {
-  content: "➡️ ";
+  content: " ";
+  background: url(/img/more.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-right: 20px !important;
 }
-.product-card .footnotes .readmore {
-  padding-right: 1rem;
-}
+
+
 
 .social-card {
   align-items: stretch;

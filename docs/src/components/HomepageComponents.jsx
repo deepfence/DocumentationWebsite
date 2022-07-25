@@ -2,6 +2,7 @@ import React from 'react';
 import { paramCase } from 'param-case';
 import Link from '@docusaurus/Link';
 import clsx from 'clsx';
+import GitHubButton from 'react-github-btn';
 
 export function HomepageSection({
   id,
@@ -39,7 +40,7 @@ export function HomepageCard({ id, icon, title, description }) {
 }
 
 /* richer product-feature card */
-export function ProductCard({ id, icon, title, description, ghstars, ghlink, docs, readmore }) {
+export function ProductCard({ id, icon, title, description, gh, docs, readmore }) {
   return (
       <div className="product-card card-content" id={id || paramCase(title)}>
         <div className="title">
@@ -48,14 +49,14 @@ export function ProductCard({ id, icon, title, description, ghstars, ghlink, doc
         </div>
         <div className="description">{description}</div>
         <div className="footnotes">
-          { ghstars  && <div class="ghstars"><Link to={`${ghlink}/stargazers`}>{ghstars}</Link></div> }
-          { ghlink   && <div class="ghlink"><Link to={ghlink}>source</Link></div> }
+          { gh       && <GitHubButton href={`https://github.com/${gh}`} data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true" aria-label="Star {gh} on GitHub">GitHub</GitHubButton> }
           { docs     && <div class="docs"><Link to={docs}>docs</Link></div> }
-          { readmore && <div class="readmore"><Link to={readmore}>read more</Link></div> }
+          { readmore && <div class="readmore"><Link to={readmore}>more</Link></div> }
         </div>
       </div>
   );
 }
+
 
 export function SocialIcon( { cta, to, img } ) {
   return (

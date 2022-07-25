@@ -57,40 +57,35 @@ function Products() {
         title="Deepfence ThreatMapper"
         description="Hunts for threats in production platforms, and ranks them based on their risk-of-exploit."
         icon="/img/products/threatmapper.svg"
-        ghstars='1,770'
-        ghlink="https://github.com/deepfence/ThreatMapper"
+        gh="deepfence/ThreatMapper"
         docs="/threatmapper"
       />
       <ProductCard
         title="Deepfence SecretScanner"
         description="Finds unprotected secrets, tokens and authentication keys in containers and file systems."
         icon="/img/products/secretscanner.svg"
-        ghstars='1,361'
-        ghlink="https://github.com/deepfence/SecretScanner"
+        gh="deepfence/SecretScanner"
         docs="/secretscanner"
       />
       <ProductCard
         title="Deepfence YaRadare"
         description="Uses YARA rules to scan builds, containers and filesystems to find indicators of malware."
         icon="/img/products/yaradare.svg"
-        ghstars='56'
-        ghlink="https://github.com/deepfence/YaRadare"
+        gh="deepfence/YaRadare"
         docs="/yaradare"
       />
       <ProductCard
         title="Deepfence PacketStreamer"
         description="A lightweight packet collector, supporting distributed hosts, clouds and kubernetes."
         icon="/img/products/packetstreamer.svg"
-        ghstars='653'
-        ghlink="https://github.com/deepfence/PacketStreamer"
+        gh="deepfence/PacketStreamer"
         docs="/packetstreamer"
       />
       <ProductCard
         title="Deepfence FlowMeter"
         description="Employs machine learning techniques to classify network flows based on packet headers."
         icon="/img/products/flowmeter.svg"
-        ghstars='28'
-        ghlink="https://github.com/deepfence/FlowMeter"
+        gh="deepfence/FlowMeter"
         docs="/flowmeter"
       />
     </Section>
