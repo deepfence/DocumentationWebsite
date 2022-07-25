@@ -14,15 +14,26 @@ Clone the repo, then:
 
 ### Initialize the components:
 
+We import the product docs from each project as a submodule.  Do this once:
+
+```
+git submodule init
+```
+
 Do this once, or when updating the packages version lists:
 
 ```
+cd docs
 yarn
 ```
 
 ### Import the docs content
 
-Pull in the documentation files (markdown, images etc) and navigation sidebars from the individual projects.
+Go to `/docs/` and pull in the documentation files (markdown, images etc) and navigation sidebars from the individual projects.  This operation will:
+
+1. Refresh the remote projects.  Note that this fails (don't know why) for FlowMeter; you can manually `git pull` while necessary.
+1. Copy the docs content from each project, making some customizations to the markdown frontmatter
+1. Copy the sidebar navigation from each project
 
 ```
 make
