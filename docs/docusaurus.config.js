@@ -11,6 +11,11 @@ const config = {
   url: 'https://docs.oweng.io',
   baseUrl: '/',
 
+  customFields: {
+    homeUrl: 'http://community.local:3000',
+    docsUrl: 'http://docs.local:3000'
+  },
+
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   favicon: '/img/deepfence.png',
@@ -94,6 +99,7 @@ const config = {
         title: '',
         logo: {
           alt: 'Deepfence',
+          href: '/',
           src: '/img/deepfence-logo-black.svg',
           srcDark: '/img/deepfence-logo-white.svg',
         },
@@ -156,15 +162,11 @@ const config = {
               },
             ],
           },
-          { 
-            to: 'https://deepfence.io/',
-            label: 'deepfence.io',
+           {
+            href: 'https://github.com/facebook/docusaurus',
             position: 'right',
-          },
-          {
-            href: 'https://github.com/deepfence',
-            label: 'GitHub',
-            position: 'right',
+            className: 'header-github-link',
+            'aria-label': 'GitHub repository',
           },
         ],
       },

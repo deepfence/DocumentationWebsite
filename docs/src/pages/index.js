@@ -36,11 +36,11 @@ function HeroBanner() {
             description="Deepfence open source projects are completely open source. No phone-home, no limits, no hidden features."
           />
           <Card
-            title="900,000 Docker Pulls"
+            title="900,000+ Docker Pulls"
             description="Deepfence ThreatMapper finds threats hidden in thousands of production platforms - Cloud, Serverless, Containers."
           />
           <Card
-            title="3,923 GitHub Stars"
+            title="4,000+ GitHub Stars"
             description="Across multiple repos, Deepfence projects are amongst the fastest adopted security solutions for cloud-native apps."
           />
         </Section>
