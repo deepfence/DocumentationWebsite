@@ -15,31 +15,6 @@
   --ifm-navbar-shadow: 0px 2px 6px rgba(0,0,0,0.2);
   --ifm-breadcrumb-border-radius: 0;
   --ifm-breadcrumb-item-background-active: none;
-
- /* --ifm-h1-font-size: 2.0rem;
-  --ifm-h2-font-size: 1.0rem;
-  --ifm-h3-font-size: 1.0rem;
-  --ifm-h4-font-size: 1.0rem;*/
-
-}
-
-
-h1 {
-/*  font-size: 5rem !important;*/
-/*  font-family: "Noto Sans Display" !important;*/
-}
-h2 {
-/*  font-size: 5rem !important;*/
-/*  font-family: "Noto Sans Display" !important;*/
-/*  font-weight:  bold !important;*/
-}
-article header h3 {
-/*  font-size: 1.3rem !important;*/
-/*  font-family: "Noto Sans Display" !important;*/
-}
-article header h4 {
-/*  font-size: 1.1rem !important;*/
-/*  font-family: "Noto Sans Display" !important;*/
 }
 
 
@@ -96,16 +71,33 @@ div[role=banner] button {
 
 .theme-doc-sidebar-container {
 /*  background-color: rgba(127,127,127,0.1);*/
-  background: linear-gradient(180deg, var(--ifm-hero-dark), var( --ifm-hero-light));
+  background: linear-gradient(180deg, var(--ifm-hero-dark), var(--ifm-hero-light) );
   font-family: "Noto Sans Display" !important;
   font-size: 0.9rem !important;
+}
+
+/* this is needed for the minimised sidebar */
+.navbar-sidebar__brand {
+  background-color: var(--ifm-navbar-background-color);
+}
+.navbar-sidebar {
+  /*  background-color: rgba(127,127,127,0.1);*/
+  background: linear-gradient(180deg, var(--ifm-hero-dark), var(--ifm-hero-light) ) !important;
+  font-family: "Noto Sans Display" !important;
+  font-size: 0.9rem !important;
+}
+.navbar-sidebar .nav-dropdown-title {
+  color: var(--ifm-menu-color);
+}
+.navbar-sidebar .navbar-sidebar__item {
+  color: var(--ifm-menu-color);
 }
 
 .sidebar-title {
   font-size: 1rem !important;
   padding: var(--ifm-menu-link-padding-vertical) var(--ifm-menu-link-padding-horizontal);
   border-bottom: 1px solid var(--ifm-color-primary-darkest);
-  color: white;
+  color: var(--ifm-menu-color);
 }
 
 /* cards */
@@ -192,10 +184,6 @@ a.theme-edit-this-page:hover {
 a.theme-edit-this-page:hover:after {
   transform: translateX(.5rem);
 }
-  
-
-
-
 
 
 
@@ -246,7 +234,6 @@ a.theme-edit-this-page:hover:after {
   --df-gray3: #353544;
 }
 
-
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #1d3372;
@@ -263,35 +250,32 @@ a.theme-edit-this-page:hover:after {
 
   /* var(--ifm-alert-border-color) - light and dark */
   --ifm-color-button: rgb(76, 179, 212);
+  /* var(--ifm-alert-background-color) - light */
+  --ifm-color-button-text: rgb(238, 249, 253);
+  --ifm-color-button-hover: rgb(238, 249, 253);
+  /* var(--ifm-alert-background-color) - dark */
+  --ifm-color-button-text-hover: rgb(25, 60, 71);
 
-  /* Cards: styles after info alerts: --ifm-alert-background-color, etc */
+
+  /* Cards: styled after info alerts: --ifm-alert-background-color, etc */
   --ifm-card-background-color: rgb(238, 249, 253);
   --ifm-card-border-radius: 0rem;
   --ifm-global-shadow-lw: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px;
 
-  /* var(--ifm-alert-background-color) - light */
-  --ifm-color-button-text: rgb(238, 249, 253);
-  --ifm-color-button-hover: rgb(238, 249, 253);
-
-  /* var(--ifm-alert-background-color) - dark */
-  --ifm-color-button-text-hover: rgb(25, 60, 71);
-
   --ifm-nav-color-active: rgb(76, 179, 212);
 
+  /* homepage */
   --ifm-homepage-card-title: #16c7f3;
-
   --ifm-hero-dark: #1d3372;
   --ifm-hero-light: #1f73b4;
-
   --ifm-productcard-bg: rgb( 128, 128, 128, 0 );
 
+  /* for the blue sidebar menu */
   --ifm-menu-color-background-active: rgb( 128, 128, 128, 0.2 );
   --ifm-menu-color: rgb(238, 249, 253) !important;
   --ifm-menu-color-active: #16c7f3;
   --ifm-toc-border-color: #67677f !important;
-
   --ifm-menu-link-sublist-icon-filter: invert(75%) !important;
-
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -307,38 +291,35 @@ a.theme-edit-this-page:hover:after {
   --ifm-code-font-size: 90%; /*95%;*/
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 
+
   /* var(--ifm-alert-border-color) - light and dark */
   --ifm-color-button: #891B9C;
+  /* var(--ifm-alert-background-color) - dark */
+  --ifm-color-button-text: rgb(238, 249, 253);
+  --ifm-color-button-hover: #e867f0;
+  /* var(--ifm-alert-background-color) - light */
+  --ifm-color-button-text-hover: rgb(25, 60, 71);
 
-  /* Cards: styles after info alerts: --ifm-alert-background-color, etc */
+
+  /* Cards: styled after info alerts: --ifm-alert-background-color, etc */
   --ifm-card-background-color: rgb(25, 60, 71);
   --ifm-card-border-radius: 0;
   --ifm-global-shadow-lw: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px;
 
-
-  /* var(--ifm-alert-background-color) - dark */
-  --ifm-color-button-text: rgb(238, 249, 253);
-  --ifm-color-button-hover: #e867f0;
-
-  /* var(--ifm-alert-background-color) - light */
-  --ifm-color-button-text-hover: rgb(25, 60, 71);
-
   --ifm-nav-color-active: #e867f0;
 
+  /* homepage */
   --ifm-homepage-card-title: #e54ced;
-
   --ifm-hero-dark: #021048;
   --ifm-hero-light: #264294;
-
   --ifm-productcard-bg: rgb( 128, 128, 128, 0.05 );
 
-  --ifm-menu-color-background-active: rgb( 128, 128, 128, 0.2 );
-  --ifm-menu-color: rgb(238, 249, 253) !important;
-  --ifm-menu-color-active: #e867f0;
-
-  --ifm-toc-border-color: #353544 !important;
-
-  --ifm-menu-link-sublist-icon-filter: invert(75%) !important;
+  /* for the blue sidebar menu */
+  --ifm-sidebar-menu-color-background-active: rgb( 128, 128, 128, 0.2 );
+  --ifm-sidebar-menu-color: rgb(238, 249, 253) !important;
+  --ifm-sidebar-menu-color-active: #e867f0;
+  --ifm-sidebar-toc-border-color: #353544 !important;
+  --ifm-sidebar-menu-link-sublist-icon-filter: invert(75%) !important;
 }
 
 #hero {
@@ -407,9 +388,10 @@ a.theme-edit-this-page:hover:after {
 }
 
 .product-card .footnotes {
-  height: 3rem;
+  height: 2.75rem;
   vertical-align: middle;
-  font-size: 14px;
+  font-size: 11px;
+  font-weight: 600;
   position:absolute; bottom:0;
   background: rgb( 128, 128, 128, 0.05 );
   border-top: 1px solid rgb( 128, 128, 128, 0.2 );
@@ -420,8 +402,18 @@ a.theme-edit-this-page:hover:after {
 .product-card .footnotes div {
   display: inline-block;
   vertical-align: middle;
-  margin-left: 0.5rem;
-  padding-bottom: 12px;
+  margin-right: 0.5rem;
+}
+
+.product-card .footnotes div.link {
+  padding-bottom: 2px;
+}
+.product-card .footnotes div.link svg {
+  height: 18px;
+  width: auto;
+  vertical-align: middle;
+  fill: var(--ifm-font-color-base);
+  padding-bottom: 2px;
 }
 
 .product-card .footnotes a {
@@ -432,12 +424,12 @@ a.theme-edit-this-page:hover:after {
   text-decoration: none;
 }
 
-.product-card .footnotes .docs:before {
+/*.product-card .footnotes .docs:before {
   content: " ";
   background: url(/img/docs.svg);
   background-size: contain;
   background-repeat: no-repeat;
-  padding-right: 20px !important;
+  padding-right: 18px !important;
 }
 
 .product-card .footnotes .readmore:before {
@@ -445,8 +437,9 @@ a.theme-edit-this-page:hover:after {
   background: url(/img/more.svg);
   background-size: contain;
   background-repeat: no-repeat;
-  padding-right: 20px !important;
-}
+  padding-right: 18px !important;
+}*/
+
 
 
 
@@ -457,22 +450,34 @@ a.theme-edit-this-page:hover:after {
   gap: 0 !important;
   flex-wrap: wrap;
   justify-content: space-between;
+  vertical-align: middle;
 }
 
 .social-card a {
-  display: inline;
+  display: inline-block;
   vertical-align: middle;
   text-decoration: none;
-
 }
 
 .social-card img {
-  height: 6rem;
   padding: 0.5rem;
+  height: 6rem;
   vertical-align: middle;
   transition: transform .2s;
 }
 .social-card img:hover {
+  transform: scale(1.1);
+}
+
+.social-card svg {
+  padding: 0.5rem;
+  height: 6rem;
+  width: auto;
+  vertical-align: middle;
+  transition: transform .2s;
+  fill: var(--ifm-font-color-base);
+}
+.social-card svg:hover {
   transform: scale(1.1);
 }
 
@@ -498,6 +503,8 @@ a.theme-edit-this-page:hover:after {
   padding-left: 6px;
   display: inline;
   line-height: 1.5;
+  font-size: 14px;
+  color: var(--ifm-font-color-base);
 }
 
 .card-content {
