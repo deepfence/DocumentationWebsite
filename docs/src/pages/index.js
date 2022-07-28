@@ -58,35 +58,35 @@ function OpenSourceProducts() {
         description="Hunts for threats in production platforms, and ranks them based on their risk-of-exploit."
         icon="/img/products/threatmapper.svg"
         gh="deepfence/ThreatMapper"
-        docs="/threatmapper"
+        docs="/docs/threatmapper"
       />
       <ProductCard
         title="Deepfence SecretScanner"
         description="Finds unprotected secrets, tokens and authentication keys in containers and file systems."
         icon="/img/products/secretscanner.svg"
         gh="deepfence/SecretScanner"
-        docs="/secretscanner"
+        docs="/docs/secretscanner"
       />
       <ProductCard
         title="Deepfence YaRadare"
         description="Uses YARA rules to scan builds, containers and filesystems to find indicators of malware."
         icon="/img/products/yaradare.svg"
         gh="deepfence/YaRadare"
-        docs="/yaradare"
+        docs="/docs/yaradare"
       />
       <ProductCard
         title="Deepfence PacketStreamer"
         description="A lightweight packet collector, supporting distributed hosts, clouds and kubernetes."
         icon="/img/products/packetstreamer.svg"
         gh="deepfence/PacketStreamer"
-        docs="/packetstreamer"
+        docs="/docs/packetstreamer"
       />
       <ProductCard
         title="Deepfence FlowMeter"
         description="Employs machine learning techniques to classify network flows based on packet headers."
         icon="/img/products/flowmeter.svg"
         gh="deepfence/FlowMeter"
-        docs="/flowmeter"
+        docs="/docs/flowmeter"
       />
     </Section>
   </div>
@@ -101,14 +101,14 @@ function EnterpriseProducts() {
         title="Deepfence ThreatStryker"
         description="Observe, correlate, learn, and act to protect your cloud-native applications, across clouds and on-prem locations.  Built on ThreatMapper, ThreatStryker adds runtime telemetry, attack storyboarding, and targetted protection."
         icon="/img/products/threatstryker.svg"
-        docs="/threatstryker"
+        docs="/docs/threatstryker"
         readmore="https://deepfence.io/threatstryker"
       />
       <ProductCard
         title="Deepfence Cloud"
         description="A self-service portal where you can deploy dedicated, fully-managed ThreatStryker instances.  Empower your teams to secure and protect their cloud-native applications, at scale and across clouds and on-prem locations."
         icon="/img/products/cloud.svg"
-        docs="/threatstryker/cloud"
+        docs="/docs/threatstryker/cloud"
         readmore="https://deepfence.io/cloud/"
       />
     </Section>

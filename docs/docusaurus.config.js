@@ -61,7 +61,7 @@ const config = {
           },
 
           breadcrumbs: true,
-          routeBasePath: '/',
+          routeBasePath: '/docs',
           // options for remark-admonitions
           admonitions: {}, 
         },
@@ -199,23 +199,23 @@ const config = {
             items: [
               {
                 label: 'ThreatMapper',
-                to: 'threatmapper',
+                to: '/docs/threatmapper',
               },
               {
                 label: 'SecretScanner',
-                to: 'secretscanner',
+                to: '/docs/secretscanner',
               },
               {
                 label: 'YaRadare',
-                to: 'yaradare',
+                to: '/docs/yaradare',
               },
               {
                 label: 'PacketStreamer',
-                to: 'packetstreamer',
+                to: '/docs/packetstreamer',
               },
               {
                 label: 'FlowMeter',
-                to: 'flowmeter',
+                to: '/docs/flowmeter',
               },
             ],
           },
@@ -248,8 +248,16 @@ const config = {
                 href: 'https://deepfence.io/threatstryker',
               },
               {
+                label: 'ThreatStryker Docs',
+                to: '/docs/threatstryker',
+              },
+              {
                 label: 'Deepfence Cloud',
                 href: 'https://deepfence.cloud',
+              },
+              {
+                label: 'Deepfence Cloud Docs',
+                to: '/docs/threatstryker/cloud',
               },
             ],
           },
