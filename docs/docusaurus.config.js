@@ -159,7 +159,7 @@ const config = {
             'aria-label': 'deepfence.io',
           },
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/deepfence',
             position: 'right',
             className: 'header-github-link',
             'aria-label': 'GitHub repository',
