@@ -8,17 +8,12 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Deepfence Community',
   tagline: 'Security Observability for Cloud Native Applications',
-  url: 'https://docs.oweng.io',
+  url: 'https://community.deepfence.io',
   baseUrl: '/',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   favicon: '/img/deepfence.png',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -45,7 +40,7 @@ const config = {
               flowmeter:      'https://github.com/deepfence/FlowMeter',
               yaradare:       'https://github.com/deepfence/YaRadare'
             };
-
+            var match;
             if(( match = docPath.match( /([^\/]*)\/(.*).md/ )) != null ) {
               product  = match[1];
               filepath = match[2];
@@ -84,7 +79,7 @@ const config = {
         { property: 'og:image', content: 'https://docs.oweng.io/img/social/deepfence.jpg' }
       ],
       announcementBar: {
-        id: 'support_threatmapper2',
+        id: 'support_threatmapper',
         content:
           '⭐️ If you like ThreatMapper, please <a href="https://github.com/deepfence/ThreatMapper" target="_blank">star it on GitHub</a> ⭐️',
         isCloseable: false
@@ -183,16 +178,20 @@ const config = {
               },
               {
                 label: 'SecretScanner',
-                href: 'https://github.com/deepfence/SecretScanner',              },
+                href: 'https://github.com/deepfence/SecretScanner',
+              },
               {
                 label: 'YaRadare',
-                href: 'https://github.com/deepfence/YaRadare',              },
+                href: 'https://github.com/deepfence/YaRadare',
+              },
               {
                 label: 'PacketStreamer',
-                href: 'https://github.com/deepfence/PacketStreamer',              },
+                href: 'https://github.com/deepfence/PacketStreamer',
+              },
               {
                 label: 'FlowMeter',
-                href: 'https://github.com/deepfence/FlowMeter',              },
+                href: 'https://github.com/deepfence/FlowMeter',
+              },
             ],
           },
           {
