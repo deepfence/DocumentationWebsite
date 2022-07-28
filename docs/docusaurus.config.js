@@ -11,11 +11,6 @@ const config = {
   url: 'https://docs.oweng.io',
   baseUrl: '/',
 
-  customFields: {
-    homeUrl: 'http://community.local:3000',
-    docsUrl: 'http://docs.local:3000'
-  },
-
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   favicon: '/img/deepfence.png',
@@ -162,7 +157,13 @@ const config = {
               },
             ],
           },
-           {
+          {
+            href: 'https://deepfence.io',
+            position: 'right',
+            className: 'header-deepfence-link',
+            'aria-label': 'deepfence.io',
+          },
+          {
             href: 'https://github.com/facebook/docusaurus',
             position: 'right',
             className: 'header-github-link',
