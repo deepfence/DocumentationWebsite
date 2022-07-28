@@ -3,10 +3,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl, {useBaseUrlUtils} from '@docusaurus/useBaseUrl';
-
-
 import Layout from '@theme/Layout';
-
 import styles from './styles.module.css';
 
 import {
@@ -16,10 +13,6 @@ import {
   SocialCard, 
   SwagCard
 } from '../components/HomepageComponents';
-
-
-
-
 
 
 function HeroBanner() {
@@ -40,7 +33,7 @@ function HeroBanner() {
             description="Deepfence ThreatMapper finds threats hidden in thousands of production platforms - Cloud, Serverless, Containers."
           />
           <Card
-            title="4,000+ GitHub Stars"
+            title="3,900+ GitHub Stars"
             description="Across multiple repos, Deepfence projects are amongst the fastest adopted security solutions for cloud-native apps."
           />
         </Section>
@@ -55,24 +48,24 @@ function OpenSourceProducts() {
     <Section title="Deepfence Open Source Projects">
       <ProductCard
         title="Deepfence ThreatMapper"
-        description="Hunts for threats in production platforms, and ranks them based on their risk-of-exploit."
+        description="Hunt for threats in production platforms, and rank them based on their risk-of-exploit."
         icon="/img/products/threatmapper.svg"
         gh="deepfence/ThreatMapper"
         docs="/docs/threatmapper"
       />
       <ProductCard
         title="Deepfence SecretScanner"
-        description="Finds unprotected secrets, tokens and authentication keys in containers and file systems."
+        description="Find unprotected secrets, tokens and authentication keys in containers and file systems."
         icon="/img/products/secretscanner.svg"
         gh="deepfence/SecretScanner"
         docs="/docs/secretscanner"
       />
       <ProductCard
-        title="Deepfence YaRadare"
-        description="Uses YARA rules to scan builds, containers and filesystems to find indicators of malware."
-        icon="/img/products/yaradare.svg"
-        gh="deepfence/YaRadare"
-        docs="/docs/yaradare"
+        title="Deepfence YaraHunter"
+        description="Use YARA rules to scan builds, containers and filesystems to find indicators of malware."
+        icon="/img/products/yarahunter.svg"
+        gh="deepfence/YaraHunter"
+        docs="/docs/yarahunter"
       />
       <ProductCard
         title="Deepfence PacketStreamer"
@@ -83,7 +76,7 @@ function OpenSourceProducts() {
       />
       <ProductCard
         title="Deepfence FlowMeter"
-        description="Employs machine learning techniques to classify network flows based on packet headers."
+        description="Employ machine learning techniques to classify network flows based on packet headers."
         icon="/img/products/flowmeter.svg"
         gh="deepfence/FlowMeter"
         docs="/docs/flowmeter"
@@ -143,5 +136,3 @@ export default function HomePage() {
     </Layout>
   );
 }
-
-

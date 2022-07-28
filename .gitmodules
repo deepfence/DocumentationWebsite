@@ -7,12 +7,12 @@
 [submodule "product-docs/PacketStreamer"]
 	path = product-docs/PacketStreamer
 	url = https://github.com/deepfence/PacketStreamer.git
-[submodule "product-docs/YaRadare"]
-	path = product-docs/YaRadare
-	url = https://github.com/deepfence/YaRadare.git
 [submodule "product-docs/FlowMeter"]
 	path = product-docs/FlowMeter
 	url = https://github.com/deepfence/FlowMeter.git
 [submodule "product-docs/ThreatStryker-docs"]
 	path = product-docs/ThreatStryker-docs
 	url = https://github.com/deepfence/ThreatStryker-docs.git
+[submodule "product-docs/YaraHunter"]
+	path = product-docs/YaraHunter
+	url = https://github.com/deepfence/YaraHunter.git

@@ -13,7 +13,7 @@ my %image = (
   secretscanner => "/img/social/secretscanner.jpg",
   packetstreamer => "/img/social/packetstreamer.jpg",
   flowmeter => "/img/social/flowmeter.jpg",
-  yaradare => "/img/social/yaradare.jpg"
+  yarahunter => "/img/social/yarahunter.jpg"
 );
 
 my %keywords = (
@@ -22,7 +22,7 @@ my %keywords = (
   secretscanner => "[secret, secret scanning, token, key, password, container, image ]",
   packetstreamer => "[tcpdump, distributed, remote, pcap, packet ]",
   flowmeter => "[pcap, packet, ML, machine learning ]",
-  yaradare => "[yara, scan, container, image, filesystem, malware ]"
+  yarahunter => "[yara, scan, container, image, filesystem, malware ]"
 );
 
 

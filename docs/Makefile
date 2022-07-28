@@ -26,7 +26,7 @@ docs:
 	./import.pl secretscanner  --from ../product-docs/SecretScanner/docs/docs --to docs
 	./import.pl packetstreamer --from ../product-docs/PacketStreamer/docs/docs --to docs
 	./import.pl flowmeter      --from ../product-docs/FlowMeter/docs/docs --to docs
-	./import.pl yaradare       --from ../product-docs/YaRadare/docs/docs --to docs
+	./import.pl yarahunter     --from ../product-docs/YaraHunter/docs/docs --to docs
 
 
 sidebars: 
@@ -36,7 +36,7 @@ sidebars:
 	cp ../product-docs/SecretScanner/docs/sidebars.js      sidebars/secretscanner.js
 	cp ../product-docs/PacketStreamer/docs/sidebars.js     sidebars/packetstreamer.js
 	cp ../product-docs/FlowMeter/docs/sidebars.js          sidebars/flowmeter.js
-	cp ../product-docs/YaRadare/docs/sidebars.js           sidebars/yaradare.js
+	cp ../product-docs/YaraHunter/docs/sidebars.js         sidebars/yarahunter.js
 
 pull:
 	@echo Updating product repos
@@ -45,5 +45,5 @@ pull:
 
 clean:
 	-@rm sidebars/*.js
-	-@rm -rf docs/*
+	-@rm -rf docs/threatmapper docs/threatstryker docs/secretscanner docs/packetstreamer docs/flowmeter docs/yarahunter 
 	-@rm -rf build

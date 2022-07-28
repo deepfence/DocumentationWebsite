@@ -38,12 +38,12 @@ const config = {
               secretscanner:  'https://github.com/deepfence/SecretScanner',
               packetstreamer: 'https://github.com/deepfence/PacketStreamer',
               flowmeter:      'https://github.com/deepfence/FlowMeter',
-              yaradare:       'https://github.com/deepfence/YaRadare'
+              yarahunter:     'https://github.com/deepfence/YaraHunter'
             };
             var match;
             if(( match = docPath.match( /([^\/]*)\/(.*).md/ )) != null ) {
-              product  = match[1];
-              filepath = match[2];
+              var product  = match[1];
+              var filepath = match[2];
               if( repo[product] != null ) {
                 return `${repo[product]}/edit/main/docs/docs/${product}/${filepath}.md`;
               }
@@ -73,8 +73,8 @@ const config = {
       /* Note that markdown documents outside of the docs tree are not processed for frontmatter metadata 
          Additionally, metadata is only applied in full client builds of the site */
       metadata: [
-        { name: 'keywords', content: 'deepfence,documentation,howto,threatmapper,threatstryker,secretscanner,packetstreamer,flowmeter,yaradare,security,secops,devsecops,appsec' },
-        { property: 'og:keywords', content: 'deepfence,documentation,howto,threatmapper,threatstryker,secretscanner,packetstreamer,flowmeter,yaradare,security,secops,devsecops,appsec' },
+        { name: 'keywords', content: 'deepfence,documentation,howto,threatmapper,threatstryker,secretscanner,packetstreamer,flowmeter,yarahunter,security,secops,devsecops,appsec' },
+        { property: 'og:keywords', content: 'deepfence,documentation,howto,threatmapper,threatstryker,secretscanner,packetstreamer,flowmeter,yarahunter,security,secops,devsecops,appsec' },
         { name: 'image', content: 'https://docs.oweng.io/img/social/deepfence.jpg' },
         { property: 'og:image', content: 'https://docs.oweng.io/img/social/deepfence.jpg' }
       ],
@@ -123,8 +123,8 @@ const config = {
               },
               {
                 type: 'doc',
-                docId: 'yaradare/index',
-                label: 'YaRadare',
+                docId: 'yarahunter/index',
+                label: 'YaraHunter',
               },
               {
                 type: 'doc',
@@ -181,8 +181,8 @@ const config = {
                 href: 'https://github.com/deepfence/SecretScanner',
               },
               {
-                label: 'YaRadare',
-                href: 'https://github.com/deepfence/YaRadare',
+                label: 'YaraHunter',
+                href: 'https://github.com/deepfence/YaraHunter',
               },
               {
                 label: 'PacketStreamer',
@@ -206,8 +206,8 @@ const config = {
                 to: '/docs/secretscanner',
               },
               {
-                label: 'YaRadare',
-                to: '/docs/yaradare',
+                label: 'YaraHunter',
+                to: '/docs/yarahunter',
               },
               {
                 label: 'PacketStreamer',
