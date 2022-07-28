@@ -35,7 +35,7 @@ const config = {
           editUrl:
             'https://github.com/deepfence/ThreatMapper/docs/',
           breadcrumbs: true,
-          routeBasePath: '/',
+          routeBasePath: '/docs',
           // options for remark-admonitions
           admonitions: {}, 
         },
@@ -61,7 +61,7 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'threatmapper/index',
+            docId: '/docs/threatmapper/index',
             label: 'ThreatMapper Documentation',
           },
           { 

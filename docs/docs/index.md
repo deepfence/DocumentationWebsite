@@ -12,4 +12,4 @@ title: Deepfence Documentation
 | [<img src='/img/products/packetstreamer.svg' width='48' height='48'/>](packetstreamer) | **[Deepfence PacketStreamer](packetstreamer)**<br/>A lightweight packet collector, supporting distributed hosts, clouds and kubernetes. |
 | [<img src='/img/products/flowmeter.svg' width='48' height='48'/>](flowmeter) | **[Deepfence FlowMeter](flowmeter)**<br/>Employ machine learning techniques to classify network flows based on packet headers. |
 | [<img src='/img/products/threatstryker.svg' width='48' height='48'/>](threatstryker) | **[Deepfence ThreatStryker](threatstryker)**<br/>Observe, correlate, learn, and act to protect your cloud-native applications. |
-| [<img src='/img/products/cloud.svg' width='48' height='48'/>](cloud) | **[Deepfence Cloud](threatstryker/cloud)**<br/>A self-service portal for dedicated, fully-managed ThreatStryker instances. |
+| [<img src='/img/products/cloud.svg' width='48' height='48'/>](threatstryker/cloud) | **[Deepfence Cloud](threatstryker/cloud)**<br/>A self-service portal for dedicated, fully-managed ThreatStryker instances. |

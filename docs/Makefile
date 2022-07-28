@@ -9,12 +9,15 @@
 # or because of a local edit.  Note that local edits to the submodule documentation are not reflected in the documentation 
 # site until make is run
 
-.PHONY: docs sidebars
+.PHONY: docs sidebars build
 
 all: pull docs sidebars
 
 run:
 	yarn start
+
+build:
+	yarn build
 
 docs:
 	@echo Importing docs to ./docs
@@ -43,3 +46,4 @@ pull:
 clean:
 	-@rm sidebars/*.js
 	-@rm -rf docs/*
+	-@rm -rf build
