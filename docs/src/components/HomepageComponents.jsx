@@ -40,8 +40,8 @@ export function HomepageCard({ id, icon, title, description }) {
   return (
     <div className="homepage-card card-content" id={id || paramCase(title)}>
       <div className="title">
-        {icon && <img class="icon" src={icon} />}
-        <span classname="heading">{title}</span>
+        {icon && <img className="icon" src={icon} />}
+        <span className="heading">{title}</span>
       </div>
       <div className="description">{description}</div>
     </div>
@@ -53,15 +53,15 @@ export function ProductCard({ id, icon, title, description, gh, docs, readmore }
   return (
       <div className="product-card card-content" id={id || paramCase(title)}>
         <div className="title">
-          {icon && <img class="icon" src={icon} />}
-          <div class="heading">{title}</div>
+          {icon && <img className="icon" src={icon} />}
+          <div className="heading">{title}</div>
         </div>
         <div className="description">{description}</div>
         <div className="footnotes">
-          { gh       && <div class="ghbutton"><GitHubButton href={`https://github.com/${gh}`} data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true" aria-label="Star {gh} on GitHub">GitHub</GitHubButton></div> }
-          { gh       && <div class="ghbutton"><GitHubButton href={`https://github.com/${gh}/fork`} data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork {gh} on GitHub"></GitHubButton></div> }
-          { docs     && <div class="link"><Link to={docs}><Docs_svg/> Docs</Link></div> }
-          { readmore && <div class="link"><Link to={readmore}><More_svg/> More</Link></div> }
+          { gh       && <div className="ghbutton"><GitHubButton href={`https://github.com/${gh}`} data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true" aria-label="Star {gh} on GitHub">GitHub</GitHubButton></div> }
+          { gh       && <div className="ghbutton"><GitHubButton href={`https://github.com/${gh}/fork`} data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork {gh} on GitHub"></GitHubButton></div> }
+          { docs     && <div className="link"><Link to={docs}><Docs_svg/> Docs</Link></div> }
+          { readmore && <div className="link"><Link to={readmore}><More_svg/> More</Link></div> }
         </div>
       </div>
   );
@@ -102,9 +102,9 @@ export function SwagCard( {} ) {
   return (
     <div className="social-card card-content">
       <Link to="https://go.deepfence.io/community-monthly-swag-sign-up">
-        <div class="swagcontainer">
+        <div className="swagcontainer">
           <img src="/img/social/swag.png" />
-          <div class="swagtext">Sign up each month for a chance to win a Deepfence swag kit. Support Deepfence with pride!</div>
+          <div className="swagtext">Sign up each month for a chance to win a Deepfence swag kit. Support Deepfence with pride!</div>
         </div>
       </Link>
     </div>

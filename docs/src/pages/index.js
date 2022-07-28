@@ -14,7 +14,6 @@ import {
   SwagCard
 } from '../components/HomepageComponents';
 
-
 function HeroBanner() {
   return (
     <div className={styles.hero} id="hero">

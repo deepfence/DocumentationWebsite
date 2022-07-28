@@ -60,7 +60,7 @@ const config = {
           customCss: require.resolve('./static/css/deepfence.css'),
         },
         googleAnalytics: {
-          trackingID: 'UA-74324220-2',
+          trackingID: 'UA-74324220-1',
           anonymizeIP: false,
         },
       }),
@@ -294,6 +294,11 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+  plugins: [
+    ['./df-bigpicture-plugin', {
+      trackingID: '1523'
+    }], 
+  ],
 };
 
 module.exports = config;
