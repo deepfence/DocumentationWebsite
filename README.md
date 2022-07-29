@@ -92,7 +92,8 @@ server {
     listen 80;
 
     location / {
-        root /home/owen/docroot;
+        # the contents of the build process from Docusaurus
+        root /var/website/build;
     }
 }
 ```
