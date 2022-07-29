@@ -2,14 +2,35 @@
 title: Deepfence Documentation
 ---
 
-# Deepfence Documentation
+<!-- this is a simple holding page to catch incoming links to /docs.  It is not included in the site navigation -->
 
-| | |
-| -- | -- |
-| [<img src='/img/products/threatmapper.svg' width='48' height='48'/>](threatmapper) | **[Deepfence ThreatMapper](threatmapper)**<br/>Hunt for threats in production platforms, and rank them based on their risk-of-exploit. |
-| [<img src='/img/products/secretscanner.svg' width='48' height='48'/>](secretscanner) | **[Deepfence SecretScanner](secretscanner)**<br/>Find unprotected secrets, tokens and authentication keys in containers and file systems. |
-| [<img src='/img/products/yarahunter.svg' width='48' height='48'/>](yarahunter) | **[Deepfence YaraHunter](yarahunter)**<br/>Use YARA rules to scan builds, containers and filesystems to find indicators of malware. |
-| [<img src='/img/products/packetstreamer.svg' width='48' height='48'/>](packetstreamer) | **[Deepfence PacketStreamer](packetstreamer)**<br/>A lightweight packet collector, supporting distributed hosts, clouds and kubernetes. |
-| [<img src='/img/products/flowmeter.svg' width='48' height='48'/>](flowmeter) | **[Deepfence FlowMeter](flowmeter)**<br/>Employ machine learning techniques to classify network flows based on packet headers. |
-| [<img src='/img/products/threatstryker.svg' width='48' height='48'/>](threatstryker) | **[Deepfence ThreatStryker](threatstryker)**<br/>Observe, correlate, learn, and act to protect your cloud-native applications. |
-| [<img src='/img/products/cloud.svg' width='48' height='48'/>](threatstryker/cloud) | **[Deepfence Cloud](threatstryker/cloud)**<br/>A self-service portal for dedicated, fully-managed ThreatStryker instances. |
+<table><tbody>
+<tr>
+  <td width="64"><a href="/docs/threatmapper"><img src='/img/products/threatmapper.svg'/></a></td>
+  <td><a href="/docs/threatmapper"><b>Deepfence ThreatMapper</b></a><br/>Hunt for threats in production platforms, and rank them based on their risk-of-exploit.</td>
+</tr>
+<tr>
+  <td width="64"><a href="/docs/threatmapper"><img src='/img/products/secretscanner.svg'/></a></td>
+  <td><a href="/docs/secretscanner"><b>Deepfence SecretScanner</b></a><br/>Find unprotected secrets, tokens and authentication keys in containers and file systems.</td>
+</tr>
+<tr>
+  <td width="64"><a href="/docs/threatmapper"><img src='/img/products/yarahunter.svg'/></a></td>
+  <td><a href="/docs/yarahunter"><b>Deepfence YaraHunter</b></a><br/>Use YARA rules to scan builds, containers and filesystems to find indicators of malware.</td>
+</tr>
+<tr>
+  <td width="64"><a href="/docs/threatmapper"><img src='/img/products/packetstreamer.svg'/></a></td>
+  <td><a href="/docs/packetstreamer"><b>Deepfence PacketStreamer</b></a><br/>A lightweight packet collector, supporting distributed hosts, clouds and kubernetes.</td>
+</tr>
+<tr>
+  <td width="64"><a href="/docs/threatmapper"><img src='/img/products/flowmeter.svg'/></a></td>
+  <td><a href="/docs/flowmeter"><b>Deepfence FlowMeter</b></a><br/>Employ machine learning techniques to classify network flows based on packet headers.</td>
+</tr>
+<tr>
+  <td width="64"><a href="/docs/threatmapper"><img src='/img/products/threatstryker.svg'/></a></td>
+  <td><a href="/docs/threatstryker"><b>Deepfence ThreatStryker</b></a><br/>Observe, correlate, learn, and act to protect your cloud-native applications.</td>
+</tr>
+<tr>
+  <td width="64"><a href="/docs/threatmapper"><img src='/img/products/cloud.svg'/></a></td>
+  <td><a href="/docs/threatstryker/cloud"><b>Deepfence Cloud</b></a><br/>A self-service portal for dedicated, fully-managed ThreatStryker instances.</td>
+</tr>
+</tbody></table>

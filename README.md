@@ -1,6 +1,135 @@
-# Deepfence Documentation Project
+# Deepfence Community and Documentation Website
+
+This website serves two purposes:
+
+ * As a product showcase and starting point for community users to find useful resources
+ * To host documentation for the individual open source and enterprise products
+
+The build process imports the documentation from individual Deepfence projects to create a larger website that documents all projects in one place.
+
+To prepare a project for documentation, jump forward to the section [Adding docs to your own project](#adding-docs-to-your-own-project).
+
+The website is built using [Docusaurus 2](https://docusaurus.io/).
+
+## Quick Start
+
+Clone the repo, then:
+
+### Initialize the components:
+
+Import the product docs from each project as a submodule.  Do this once:
+
+```bash
+git submodule init
+```
+
+Initialize the dependencies.  Do this once:
+
+```bash
+cd docs
+yarn
+```
+
+### Import the docs content
+
+Run `make` to import the docs from the submodule projects.  Do this any time the docs are updated.
+
+```bash
+cd docs
+make
+```
+
+This operation will build the full source for the website:
+
+1. Refresh the remote projects (`git submodule update --remote`)
+1. Copy the docs content from each project (`docs/docs/projectname`) into the `docs/docs/projectname` location for this website, making some SEO customizations to the markdown frontmatter
+1. Copy the sidebar navigation from each project
+
+
+### Run the website
+
+Run `make run` to preview the website.
+
+```bash
+make run
+```
+
+This command (running [`docusaurus start`](https://docusaurus.io/docs/cli#docusaurus-start-sitedir)) builds a site preview, starts a local development server and opens up a browser window.  Most changes are reflected live without having to restart the server.  Use `--port` to select a different port to the default (:3000).
+
+### Build the content for publication
+
+Run `make build` to create the static, production-ready site.
+
+```bash
+make build
+```
+
+A [full build](https://docusaurus.io/docs/cli#docusaurus-build-sitedir) goes through additional steps of packing, minifying and checking the build. This process may identify problems (e.g. broken links) that the quick preview build fails to detect.  It also enables the production-only features, such as google analytics and bigpicture beacons.
+
+The resulting static build is located in `build/`.
+
+Alternatively, you can build-and-serve the site as follows:
+
+```bash
+yarn run serve --build --port 8000 --host 0.0.0.0
+```
+
+## Hosting the site
+
+The site is intended to be hosted behind two domains:
+
+ * `community.mydomain.com`: the primary domain to be used to serve the site
+ * `docs.mydomain.com`: used to provide links to the docs, particularly for the enterprise product documentation where a 'community' domain would not be appropriate.
+
+It's an anti pattern to serve an SPA from multiple domains, and switch domains during routing. Configuration is non-trivial and the user experience is poor as a change of domain means a full reload of the SPA. Therefore, `docs.mydomain.com/productname` redirects to `community.mydomain.com/docs/productname` to achieve this.
+
+The following, minimal NGINX configuration is sufficient:
+
+```nginx
+# File: conf.d/community.mydomain.com.conf
+server {
+    server_name community.mydomain.com;
+    listen 80;
+
+    location / {
+        root /home/owen/docroot;
+    }
+}
+```
+
+```nginx
+# File: conf.d/docs.mydomain.com.conf
+server {
+    server_name docs.mydomain.com;
+    listen 80;
+
+    location / {
+        return 302 $scheme://docs.mydomain.com/docs$request_uri;
+    }
+}
+```
+
+TLS certificates can be obtained using, for example, `certbot --nginx -d community.mydomain.com -d docs.mydomain.com`.
+
+
+## Editing the website
+
+### Editing the home page
+
+The home page is located in `docs/src/pages/index.js`.  You can edit this page directly, and changes will be reflected immediately in the running website.
+
+### Editing the product docs
+
+The product docs are sourced from the individual product repos, and are additionally decorated when they are imported (`make`) into the documentation website.  
+
+You can edit the product docs in their respective submodules (`/product-docs`) and run `make` to re-import them.  Changes in the submodule are independent of this repo, can be submitted to their respective repos in the usual way.
+
+For large changes to product docs (e.g. to prepare for a new release), it is better to develop these changes in the product's repo, test them locally, and then merge them to the product's `main` branch once complete.  You can then rebuild the documentation website.
+
 
 ## Adding docs to your own project
+
+Follow these steps if you'd like to add docs to a new Deepfence project, and to have them included in this Documentation Website.
 
 ### Get the Skeleton Files
 
@@ -23,15 +152,14 @@ Copy `skel/docs` into the root of the repo, to create a new `/docs/` directory. 
 | `docs/.gitignore` | Configuration to ignore node dependencies and temporary files |
 | `docs/babel.config.js` | Babel config |
 
-
 These are the basic skeleton files needed to create a local docs site.
 
 ### Customise the Skeleton files
 
 The skeleton files are set up for the `threatmapper` product.  You'll need to select an alternative product name (e.g. `packetstreamer`) and edit the files appropriately.
 
-```
-cd docs/
+```bash
+cd docs
 ```
 
 Rename the `docs/threatmapper` directory to be product-appropriate, e.g. `packetstreamer`.  The markdown files for the product documentation will be wholy contained in that location.
@@ -52,23 +180,23 @@ You will want to edit sidebars.js further, to define the nav structure of the do
 
 Check you've replaced all instances:
 
-```
+```bash
 # Should return nothing
 grep -ir threatmapper .
 ```
 
 You'll then want to add these files into your repository, before you initialize docusaurus:
 
-```
-git add `find . -type f`
+```bash
+git add -A
 ```
 
 ### Initialise Docusaurus
 
 Initialize Docusaurus:
 
-```
-cd docs/
+```bash
+cd docs
 
 # you're now in the docs folder, with package.json and yarn.lock
 
@@ -80,21 +208,30 @@ Docusaurus will create a number of local temporary files which should not be tra
 
 ### Start the docs application
 
-```
+```bash
 yarn start
 ```
 
 ### Write your docs
 
-```cd docs```
+```bash
+cd docs
+```
 
+You can now begin adding docs to your repo, into `docs/docs/productname`, and edit the sidebar at `docs/sidebar.js`. Take a look at other Deepfence products to understand the sidebar schema.
 
-You can now begin adding docs, into `docs/productname`, and edit the sidebar at `sidebar.js`. Take a look at other Deepfence products to understand the schema.
+## Adding a new project to the Documentation Website
 
+This documentation website collects documentation from the various Deepfence projects (your `~repo/docs/docs/` folders) and imports the sidebar navigation from each project.  It assembles this into a single, larger Docusaurus project.
 
-## Building the main Deepfence Documentation Website
+You'll need to:
+ * Add your project as a new git submodule (`cd product-docs ; git submodule add <repo.git>`)
+ * Add your project to the [MakeFile](docs/Makefile) targets so its assets are imported
+ * Edit the site configuration [docusaurus.config.js](docs/docusaurus.config.js) to add your project into the nav, footer, editURL calculation and site metadata
+ * Add your project to the sidebar generator [sidebars.js](docs/sidebars.js)
 
-The main website collects documentation from the various Deepfence projects (your `~repo/docs/docs/` folders) and imports the sidebar navigation you defined.  It assembles that into a single, larger Docusaurus project.
-
-See the content in [`/docs`](/docs) for how this works.
-
+Additionally, you will want to:
+ * Add an [icon](docs/static/img/products/) (source: [icons.svg](docs/static/img/products/icons.svg)) and [social card](docs/static/img/social) for your project
+ * Edit the importer [import.pl](docs/import.pl) to decorate your docs with project-specific site metadata
+ * Edit the home page [index.js](docs/src/pages/index.js) to add your project to the Community Home Page
+ * Edit the documentation page [docs/index.md](docs/docs/index.md) to add your project to the documentation page
