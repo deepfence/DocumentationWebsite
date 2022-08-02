@@ -105,7 +105,7 @@ server {
     listen 80;
 
     location / {
-        return 302 $scheme://docs.mydomain.com/docs$request_uri;
+        return 302 $scheme://community.mydomain.com/docs$request_uri;
     }
 }
 ```
