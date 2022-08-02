@@ -75,8 +75,8 @@ const config = {
       metadata: [
         { name: 'keywords', content: 'deepfence,documentation,howto,threatmapper,threatstryker,secretscanner,packetstreamer,flowmeter,yarahunter,security,secops,devsecops,appsec' },
         { property: 'og:keywords', content: 'deepfence,documentation,howto,threatmapper,threatstryker,secretscanner,packetstreamer,flowmeter,yarahunter,security,secops,devsecops,appsec' },
-        { name: 'image', content: 'https://docs.oweng.io/img/social/deepfence.jpg' },
-        { property: 'og:image', content: 'https://docs.oweng.io/img/social/deepfence.jpg' }
+        { name: 'image', content: '/img/social/deepfence.jpg' },
+        { property: 'og:image', content: '/img/social/deepfence.jpg' }
       ],
       announcementBar: {
         id: 'support_threatmapper',
