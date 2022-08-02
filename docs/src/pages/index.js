@@ -22,17 +22,17 @@ function HeroBanner() {
           Deepfence Community
         </h1>
       
-        <Section title="Open-Source is at the core of what we do, trusted by 1,000's of community users." HeadingTag="h3">
+        <Section title="Open Source is at the core of what we do, trusted by 1,000's of community users." HeadingTag="h3">
           <Card
             title="100% open source"
             description="Deepfence open source projects are completely open source. No phone-home, no limits, no hidden features."
           />
           <Card
-            title="900,000+ Docker Pulls"
+            title="Multi-Cloud, Multi-Modality"
             description="Deepfence ThreatMapper finds threats hidden in thousands of production platforms - Cloud, Serverless, Containers."
           />
           <Card
-            title="3,900+ GitHub Stars"
+            title="Be Part of the Wave"
             description="Across multiple repos, Deepfence projects are amongst the fastest adopted security solutions for cloud-native apps."
           />
         </Section>
