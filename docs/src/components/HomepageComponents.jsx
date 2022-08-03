@@ -12,6 +12,7 @@ import GitHub_svg from '../../static/img/social/github.svg';
 import LinkedIn_svg from '../../static/img/social/linkedin.svg';
 import Twitter_svg from '../../static/img/social/twitter.svg';
 import G2_svg from '../../static/img/social/g2.svg';
+import {useEffect, useState} from 'react';
 
 export function HomepageSection({
   id,
@@ -37,6 +38,7 @@ export function HomepageSection({
 
 /* simple card for layout, no interactivity */
 export function HomepageCard({ id, icon, title, description }) {
+  const [githubData, setGithubData] = useState([])
   return (
     <div className="homepage-card card-content" id={id || paramCase(title)}>
       <div className="title">
