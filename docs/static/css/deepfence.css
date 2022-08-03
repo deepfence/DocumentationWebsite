@@ -107,22 +107,35 @@ div[role=banner] button {
 /* Style the sidebar */
 
 .theme-doc-sidebar-container {
-/*  background-color: rgba(127,127,127,0.1);*/
-  background: linear-gradient(180deg, var(--ifm-hero-dark), var(--ifm-hero-light) );
+  background-image: url(/img/backgrounds/Deepfence_BR_backgrounds_1a.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; 
   font-family: "Noto Sans Display" !important;
   font-size: 0.9rem !important;
 }
+
+[data-theme='dark'] .theme-doc-sidebar-container {
+    background-image: url(/img/backgrounds/Deepfence_BR_backgrounds_1b.jpg);
+}
+
 
 /* this is needed for the minimised sidebar */
 .navbar-sidebar__brand {
   background-color: var(--ifm-navbar-background-color);
 }
 .navbar-sidebar {
-  /*  background-color: rgba(127,127,127,0.1);*/
-  background: linear-gradient(180deg, var(--ifm-hero-dark), var(--ifm-hero-light) ) !important;
+  background-image: url(/img/backgrounds/Deepfence_BR_backgrounds_1a.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; 
   font-family: "Noto Sans Display" !important;
   font-size: 0.9rem !important;
 }
+[data-theme='dark'] .navbar-sidebar {
+  background-image: url(/img/backgrounds/Deepfence_BR_backgrounds_1b.jpg);
+}
+
 .navbar-sidebar .nav-dropdown-title {
   color: var(--ifm-menu-color);
 }
@@ -133,7 +146,7 @@ div[role=banner] button {
 .sidebar-title {
   font-size: 1rem !important;
   padding: var(--ifm-menu-link-padding-vertical) var(--ifm-menu-link-padding-horizontal);
-  border-bottom: 1px solid var(--ifm-color-primary-darkest);
+  border-bottom: 1px solid var(--ifm-nav-color-active);
   color: var(--ifm-menu-color);
 }
 
@@ -303,8 +316,6 @@ a.theme-edit-this-page:hover:after {
 
   /* homepage */
   --ifm-homepage-card-title: #16c7f3;
-  --ifm-hero-dark: #1d3372;
-  --ifm-hero-light: #1f73b4;
   --ifm-productcard-bg: rgb( 128, 128, 128, 0 );
 
   /* for the blue sidebar menu */
@@ -347,25 +358,30 @@ a.theme-edit-this-page:hover:after {
 
   /* homepage */
   --ifm-homepage-card-title: #e54ced;
-  --ifm-hero-dark: #021048;
-  --ifm-hero-light: #264294;
   --ifm-productcard-bg: rgb( 128, 128, 128, 0.05 );
 
   /* for the blue sidebar menu */
   --ifm-sidebar-menu-color-background-active: rgb( 128, 128, 128, 0.2 );
   --ifm-sidebar-menu-color: rgb(238, 249, 253) !important;
   --ifm-sidebar-menu-color-active: #e867f0;
+  --ifm-menu-color-active: #e867f0;
   --ifm-sidebar-toc-border-color: #353544 !important;
   --ifm-sidebar-menu-link-sublist-icon-filter: invert(75%) !important;
 }
 
 #hero {
-/*  background: linear-gradient(90deg, #021048, #1e38a3); */
-
-  background: linear-gradient(90deg, var(--ifm-hero-dark), var( --ifm-hero-light));
+  background-image: url(/img/backgrounds/Deepfence_BR_backgrounds_1a.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; 
 
   color: white !important;
 }
+
+[data-theme='dark'] #hero {
+    background-image: url(/img/backgrounds/Deepfence_BR_backgrounds_1b.jpg);
+}
+
 .homepage-section {
   margin-bottom: 3rem;
 }

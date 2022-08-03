@@ -24,7 +24,7 @@ function HeroBanner() {
       
         <Section title="Open Source is at the core of what we do, trusted by 1,000's of community users." HeadingTag="h3">
           <Card
-            title="100% open source"
+            title="100% Open Source"
             description="Deepfence open source projects are completely open source. No phone-home, no limits, no hidden features."
           />
           <Card
