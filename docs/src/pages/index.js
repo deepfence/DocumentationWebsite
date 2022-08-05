@@ -5,7 +5,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl, {useBaseUrlUtils} from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import styles from './styles.module.css';
-
+import { useEffect, useState } from 'react';
 import {
   HomepageCard as Card,
   HomepageSection as Section,
@@ -15,6 +15,21 @@ import {
 } from '../components/HomepageComponents';
 
 function HeroBanner() {
+  const fetchData = () => {
+    return fetch(`https://api.github.com/orgs/deepfence/repos`)
+      .then((response) => response.json())
+      .then((data) => setGithubData(data));
+  }
+  useEffect(() => {
+    fetchData();
+  } , []);
+  const [githubData, setGithubData] = useState([]);
+  function getStars  (data) {
+    return data.reduce((acc, curr) => {
+      return acc + curr.stargazers_count;
+    } , 0); 
+  
+  }
   return (
     <div className={styles.hero} id="hero">
       <div className={styles.heroInner}>
@@ -32,7 +47,7 @@ function HeroBanner() {
             description="Deepfence ThreatMapper finds threats hidden in thousands of production platforms - Cloud, Serverless, Containers."
           />
           <Card
-            title="Be Part of the Wave"
+            title={getStars(githubData)}
             description="Across multiple repos, Deepfence projects are amongst the fastest adopted security solutions for cloud-native apps."
           />
         </Section>
