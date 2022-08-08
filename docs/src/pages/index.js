@@ -16,6 +16,7 @@ import {
 
 function HeroBanner() {
   const fetchData = () => {
+    console.log( "Getting data" );
     return fetch(`https://api.github.com/orgs/deepfence/repos`)
       .then((response) => response.json())
       .then((data) => setGithubData(data));
@@ -24,12 +25,14 @@ function HeroBanner() {
     fetchData();
   } , []);
   const [githubData, setGithubData] = useState([]);
-  function getStars  (data) {
-    return data.reduce((acc, curr) => {
-      return acc + curr.stargazers_count;
+  function getStars (data) {
+    const repos = [ 'ThreatMapper','SecretScanner', 'YaraHunter', 'PacketStreamer', 'FlowMeter' ];
+    var acc1 = data.reduce((acc, curr) => {
+      return repos.includes(curr.name) ? acc + curr.stargazers_count : acc ;
     } , 0); 
-  
+    return `${acc1.toLocaleString()} GitHub Stars`;
   }
+
   return (
     <div className={styles.hero} id="hero">
       <div className={styles.heroInner}>
