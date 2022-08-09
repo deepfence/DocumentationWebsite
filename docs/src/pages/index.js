@@ -16,7 +16,7 @@ import {
 
 function HeroBanner() {
   const fetchData = () => {
-    return fetch(`https://api.github.com/orgs/deepfence/repos`)
+    return fetch(`https://community.deepfence.io/gh-cache/orgs/deepfence/repos`)
       .then((response) => response.json())
       .then((data) => setGithubData(data));
   }
@@ -25,13 +25,18 @@ function HeroBanner() {
   } , []);
   const [githubData, setGithubData] = useState([]);
   function getStars (data) {
+    /* If this GET has failed, check browser console messages and community.deepfence.io/gh-proxy configuration.
+    
+       We try to route all github api calls through https://community.deepfence.io/gh-proxy ; see also the patch to
+       github-buttons. The gh-proxy will cache GH API requests so as to reduce the load on github and reduce the 
+       likelihood of exceeding their rate limits and getting a 403 response */
     if( ! Array.isArray( data ) ) return "Be Part of the Wave";
 
     const repos = [ 'ThreatMapper', 'SecretScanner', 'YaraHunter', 'PacketStreamer', 'FlowMeter' ];
-    var acc1 = data.reduce((acc, curr) => {
+    var stars = data.reduce((acc, curr) => {
       return repos.includes(curr.name) ? acc + curr.stargazers_count : acc ;
     } , 0); 
-    return `${acc1.toLocaleString()} GitHub Stars`;
+    return `${stars.toLocaleString()} GitHub Stars`;
   }
 
   return (
