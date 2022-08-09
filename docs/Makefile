@@ -11,7 +11,7 @@
 
 .PHONY: docs sidebars build
 
-all: pull docs sidebars
+all: pull docs sidebars extras
 
 run:
 	yarn start
@@ -37,6 +37,10 @@ sidebars:
 	cp ../product-docs/PacketStreamer/docs/sidebars.js     sidebars/packetstreamer.js
 	cp ../product-docs/FlowMeter/docs/sidebars.js          sidebars/flowmeter.js
 	cp ../product-docs/YaraHunter/docs/sidebars.js         sidebars/yarahunter.js
+
+extras:
+	@echo Copying additional resources
+	cp ../product-docs/ThreatMapper/docs/static/img/threatmapper-intro.mp4 static/img
 
 pull:
 	@echo Updating product repos
