@@ -606,4 +606,7 @@ a.theme-edit-this-page:hover:after {
   .two-cols .section-content {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
+  #video {
+    grid-column: 1;
+  }
 }
