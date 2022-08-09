@@ -389,7 +389,6 @@ a.theme-edit-this-page:hover:after {
   margin-bottom: 0;
 }
 
-
 .section-description {
   margin: 0rem 0 1.25rem 0;
   margin-top: -0.5rem;
@@ -403,6 +402,10 @@ a.theme-edit-this-page:hover:after {
 
 .two-cols .section-content {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+#video {
+  grid-column: 2 / span 2 
 }
 
 

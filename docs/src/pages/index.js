@@ -13,6 +13,8 @@ import {
   SocialCard, 
   SwagCard
 } from '../components/HomepageComponents';
+import ReactPlayer from 'react-player';
+
 
 function HeroBanner() {
   const fetchData = () => {
@@ -68,7 +70,7 @@ function HeroBanner() {
 function OpenSourceProducts() {
   return (
   <div>
-    <Section title="Deepfence Open Source Projects">
+    <Section>
       <ProductCard
         title="Deepfence ThreatMapper"
         description="Hunt for threats in production platforms, and rank them based on their risk-of-exploit."
@@ -76,6 +78,11 @@ function OpenSourceProducts() {
         gh="deepfence/ThreatMapper"
         docs="/docs/threatmapper"
       />
+      <div className="homepage-card card-content" id="video">
+        <div className="description">
+          <ReactPlayer playing controls url='/img/threatmapper-intro.mp4' />
+        </div>
+      </div>
       <ProductCard
         title="Deepfence SecretScanner"
         description="Find unprotected secrets, tokens and authentication keys in containers and file systems."
@@ -142,6 +149,7 @@ function Community() {
   </div>
   );
 }
+
 
 export default function HomePage() {
   const {siteConfig, siteMetadata} = useDocusaurusContext();
