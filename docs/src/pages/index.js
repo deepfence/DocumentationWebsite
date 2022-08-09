@@ -80,7 +80,7 @@ function OpenSourceProducts() {
       />
       <div className="homepage-card card-content" id="video">
         <div className="description">
-          <ReactPlayer playing controls url='/img/threatmapper-intro.mp4' />
+          <ReactPlayer playing controls url='/img/threatmapper-intro.mp4' width="100%" height="100%" />
         </div>
       </div>
       <ProductCard
