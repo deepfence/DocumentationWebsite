@@ -38,7 +38,8 @@ export function HomepageSection({
 
 /* simple card for layout, no interactivity */
 export function HomepageCard({ id, icon, title, description }) {
-  const [githubData, setGithubData] = useState([])
+  const [githubData, setGitHubData] = useState([])
+  const [dockerhubData, setDockerHubData] = useState([])
   return (
     <div className="homepage-card card-content" id={id || paramCase(title)}>
       <div className="title">

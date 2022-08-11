@@ -18,27 +18,44 @@ import ReactPlayer from 'react-player';
 
 function HeroBanner() {
   const fetchData = () => {
-    return fetch(`https://community.deepfence.io/gh-cache/orgs/deepfence/repos`)
+    fetch(`https://community.deepfence.io/gh-cache/orgs/deepfence/repos`)
       .then((response) => response.json())
-      .then((data) => setGithubData(data));
+      .then((data) => setGitHubData(data));
+    fetch(`https://community.deepfence.io/dh-cache/v2/repositories/deepfenceio/deepfence_agent_ce`)
+      .then((response) => response.json())
+      .then((data) => setDockerHubData(data));
   }
+
   useEffect(() => {
     fetchData();
   } , []);
-  const [githubData, setGithubData] = useState([]);
+
+  const [githubData, setGitHubData] = useState([]);
+  const [dockerhubData, setDockerHubData] = useState([]);
+
   function getStars (data) {
     /* If this GET has failed, check browser console messages and community.deepfence.io/gh-proxy configuration.
     
        We try to route all github api calls through https://community.deepfence.io/gh-proxy ; see also the patch to
        github-buttons. The gh-proxy will cache GH API requests so as to reduce the load on github and reduce the 
        likelihood of exceeding their rate limits and getting a 403 response */
-    if( ! Array.isArray( data ) ) return "Be Part of the Wave";
-
     const repos = [ 'ThreatMapper', 'SecretScanner', 'YaraHunter', 'PacketStreamer', 'FlowMeter' ];
-    var stars = data.reduce((acc, curr) => {
-      return repos.includes(curr.name) ? acc + curr.stargazers_count : acc ;
-    } , 0); 
-    return `${stars.toLocaleString()} GitHub Stars`;
+    if( Array.isArray( data ) ) {
+      var stars = data.reduce((acc, curr) => {
+        return repos.includes(curr.name) ? acc + curr.stargazers_count : acc ;
+      } , 0); 
+      if( stars > 0 ) return `${stars.toLocaleString()} GitHub Stars`;
+    } 
+    return "Be Part of the Wave";
+  }
+
+  function getPulls (data) {
+    /* If this GET has failed, check browser console messages and community.deepfence.io/dh-proxy configuration.*/
+    var pulls = data.pull_count;
+
+    if( pulls > 0 ) return `${pulls.toLocaleString()} ThreatMapper Pulls`;
+
+    return "Multi Cloud, Multi Modality";
   }
 
   return (
@@ -54,7 +71,7 @@ function HeroBanner() {
             description="Deepfence open source projects are completely open source. No phone-home, no limits, no hidden features."
           />
           <Card
-            title="Multi-Cloud, Multi-Modality"
+            title={getPulls(dockerhubData)}
             description="Deepfence ThreatMapper finds threats hidden in thousands of production platforms - Cloud, Serverless, Containers."
           />
           <Card

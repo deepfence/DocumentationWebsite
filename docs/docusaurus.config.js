@@ -231,7 +231,7 @@ const config = {
                 href: 'https://twitter.com/deepfence',
               },
               {
-                label: 'Youtube',
+                label: 'YouTube',
                 href: 'https://www.youtube.com/channel/UCklvbuOjnzpmtXy-g97tfWQ',
               },
               {
