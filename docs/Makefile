@@ -45,7 +45,7 @@ extras:
 pull:
 	@echo Updating product repos
 	@echo "  To force update, run 'git reset --hard HEAD; git pull' in each submodule repo"
-	git submodule update --recursive
+	(cd .. && bash bootstrap.sh)
 
 clean:
 	-@rm sidebars/*.js
