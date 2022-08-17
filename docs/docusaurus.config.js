@@ -59,8 +59,8 @@ const config = {
         theme: {
           customCss: require.resolve('./static/css/deepfence.css'),
         },
-        googleAnalytics: {
-          trackingID: 'UA-74324220-1',
+        gtag: {
+          trackingID: 'G-39Y0P23F1G',
           anonymizeIP: false,
         },
       }),
