@@ -56,8 +56,10 @@ export function ProductCard({ id, icon, title, description, gh, docs, readmore }
   return (
       <div className="product-card card-content" id={id || paramCase(title)}>
         <div className="title">
-          {icon && <img className="icon" src={icon} />}
-          <div className="heading">{title}</div>
+          <Link to={docs}>
+            {icon && <img className="icon" src={icon} />}
+            <div className="heading">{title}</div>
+          </Link>
         </div>
         <div className="description">{description}</div>
         <div className="footnotes">

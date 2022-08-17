@@ -94,11 +94,10 @@ function OpenSourceProducts() {
         icon="/img/products/threatmapper.svg"
         gh="deepfence/ThreatMapper"
         docs="/docs/threatmapper"
+        readmore="https://deepfence.io/threatmapper"
       />
       <div className="homepage-card card-content" id="video">
-        <div className="description">
-          <ReactPlayer playing controls url='/img/threatmapper-intro.mp4' />
-        </div>
+        <ReactPlayer playing controls url='/img/threatmapper-intro.mp4' />
       </div>
       <ProductCard
         title="Deepfence SecretScanner"
