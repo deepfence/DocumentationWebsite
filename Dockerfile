@@ -11,10 +11,14 @@ RUN cd /root/docs/ \
     && make build
 
 FROM nginx:1.23-alpine
+MAINTAINER Deepfence Inc
 LABEL deepfence.role=system
 
-WORKDIR /home/deepfence
-ADD nginx.conf /etc/nginx/conf.d/default.conf
-RUN mkdir -p /var/www/html
+ADD community.deepfence.io.conf /etc/nginx/conf.d/community.deepfence.io.conf.template
+ADD docs.deepfence.io.conf /etc/nginx/conf.d/docs.deepfence.io.conf
+ADD docker-entrypoint.sh /docker-entrypoint.d/docker-entrypoint.sh
+RUN apk update \
+    && rm /etc/nginx/conf.d/default.conf  \
+    && mkdir -p /var/www/html \
+    && chmod +x /docker-entrypoint.d/docker-entrypoint.sh
 COPY --from=build /root/docs/build /var/www/html
-RUN ls -alh /var/www/html
