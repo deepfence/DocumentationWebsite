@@ -1,0 +1,85 @@
+# yarahunter script
+
+writedelayshort 0.01
+writedelaylong  0.1
+typedelay 0.1
+
+prompt ~
+
+type docker pull 
+pause 0.4
+typefast deepfenceio/yara-hunter:latest
+pause 0.4
+type \r\n
+
+write latest: Pulling from deepfenceio/yara-hunter\r\n\r\nDigest: sha256:b82f0143f2a1530720c40ee780f78ab138d04f95b65af7a32a31678a712abe01\r\nStatus: Image is up to date for deepfenceio/yara-hunter:latest\r\ndocker.io/deepfenceio/yara-hunter:latest\r\n
+
+pause 0.2
+write \r\n
+
+prompt
+
+pause 2
+
+type docker pull 
+pause 0.4
+typefast metal3d/xmrig
+pause 0.4
+type \r\n
+
+write Using default tag: latest\r\nlatest: Pulling from metal3d/xmri\r\nDigest: sha256:c3c27a8b2f6beede6d9c0a7e5b79bb7a7b0002cca40565e7bfd2e447f3a2a628\r\nStatus: Image is up to date for metal3d/xmrig:latest\r\ndocker.io/metal3d/xmrig:latest\r\n
+
+
+pause 0.2
+write \r\n
+
+prompt
+
+pause 2
+
+
+typefast docker run -it --rm --name=yara-hunter \\\r\n      -v /var/run/docker.sock:/var/run/docker.sock \\\r\n      -v /tmp:/home/deepfence/output \\\r\n      deepfenceio/yara-hunter:latest \\\r\n      --image-name metal3d/xmrig:latest \\\r\n      --json-filename=xmrig-scan.json
+
+pause 1.5
+write \r\n
+
+
+
+pause 2
+write connected successfully using endpoint: unix:///var/run/docker.sock \r\n
+write container runtime detected: docker\r\n
+
+write {\r\n  \"Timestamp\": \"2022-08-18 13:58:41.543309237 +00:00\",\r\n  \"Image Name\": \"metal3d/xmrig:latest\",\r\n  \"Image ID\": \"a01f1ffa6691423ef43bfaee2a9c9f30fe08ee6df8d9d6586ae9692d90789c5a\",\r\n  \"Malware match detected are\": [\r\n    {\r\n      \"Image Layer ID\": \"bad74b706fcd3e01f4af74337744cbcc84ab60da82c40dd588469c6360258789\",\r\n      \"Matched Rule Name\": \"XMRIG_Miner\",\r\n      \"Strings to match are\": [\r\n            \"stratum+tcp\"\r\n      ],\r\n      \"Category\": [],\r\n      \"File Name\": \"/tmp/Deepfence/YaRadare/df_metal3dxmriglatest/ExtractedFiles/bad74b706fcd3e01f4af74337744cbcc84ab60da82c40dd588469c6360258789/usr/local/bin/xmrig\",\r\n      \"ref\":\"https://gist.github.com/GelosSnake/c2d4d6ef6f93ccb7d3afb5b1e26c7b4e \",\r\n      \"Summary\": \"The matched rule file's  ref  is https://gist.github.com/GelosSnake/c2d4d6ef6f93ccb7d3afb5b1e26c7b4e .\"\r\n    }\r\n
+write ,\r\n
+write    {\r\n      \"Image Layer ID\": \"bad74b706fcd3e01f4af74337744cbcc84ab60da82c40dd588469c6360258789\",\r\n      \"Matched Rule Name\": \"XMRIG_Miner\",\r\n      \"Strings to match are\": [\r\n            \"stratum+tcp\"\r\n      ],\r\n      \"Category\": [],\r\n      \"File Name\": \"/tmp/Deepfence/YaRadare/df_metal3dxmriglatest/ExtractedFiles/bad74b706fcd3e01f4af74337744cbcc84ab60da82c40dd588469c6360258789/xmrig-6.18.0/build/CMakeFiles/xmrig.dir/src/base/net/stratum/Url.cpp.o\",\r\n      \"ref\":\"https://gist.github.com/GelosSnake/c2d4d6ef6f93ccb7d3afb5b1e26c7b4e \",\r\n      \"Summary\": \"The matched rule file's  ref  is https://gist.github.com/GelosSnake/c2d4d6ef6f93ccb7d3afb5b1e26c7b4e .\"\r\n    }\r\n
+write ,\r\n
+write    {\r\n      \"Image Layer ID\": \"bad74b706fcd3e01f4af74337744cbcc84ab60da82c40dd588469c6360258789\",\r\n      \"Matched Rule Name\": \"Cerberus\",\r\n      \"Strings to match are\": [\r\n            \"cerberus\"\r\n      ],\r\n      \"Category\": [\"RAT\",\"memory\"],\r\n      \"File Name\": \"/tmp/Deepfence/YaRadare/df_metal3dxmriglatest/ExtractedFiles/bad74b706fcd3e01f4af74337744cbcc84ab60da82c40dd588469c6360258789/xmrig-6.18.0/src/3rdparty/fmt/README.rst\",\r\n      \"description\":\"Cerberus \",\r\n      \"author\":\"Jean-Philippe Teissier / @Jipe_ \",\r\n      \"date\":\"2013-01-12 \",\r\n      \"filetype\":\"memory \",\r\n      \"version\":\"1.0 \",\r\n      \"Summary\": \"The file /tmp/Deepfence/YaRadare/df_metal3dxmriglatest/ExtractedFiles/bad74b706fcd3e01f4af74337744cbcc84ab60da82c40dd588469c6360258789/xmrig-6.18.0/src/3rdparty/fmt/README.rst has a memory match.The file has a rule match that  Cerberus .The matched rule file's  author  is Jean-Philippe Teissier / @Jipe_ .The matched rule file's  date  is 2013-01-12 .The matched rule file's  filetype  is memory .The matched rule file's  version  is 1.0 .\"\r\n    }\r\n
+write ,\r\n
+write    {\r\n      \"Image Layer ID\": \"bad74b706fcd3e01f4af74337744cbcc84ab60da82c40dd588469c6360258789\",\r\n      \"Matched Rule Name\": \"XMRIG_Miner\",\r\n      \"Strings to match are\": [\r\n            \"stratum+tcp\"\r\n      ],\r\n      \"Category\": [],\r\n      \"File Name\": \"/tmp/Deepfence/YaRadare/df_metal3dxmriglatest/ExtractedFiles/bad74b706fcd3e01f4af74337744cbcc84ab60da82c40dd588469c6360258789/xmrig-6.18.0/src/base/net/stratum/Url.cpp\",\r\n      \"ref\":\"https://gist.github.com/GelosSnake/c2d4d6ef6f93ccb7d3afb5b1e26c7b4e \",\r\n      \"Summary\": \"The matched rule file's  ref  is https://gist.github.com/GelosSnake/c2d4d6ef6f93ccb7d3afb5b1e26c7b4e .\"\r\n    }\r\n
+write ,\r\n
+write    {\r\n      \"Image Layer ID\": \"bad74b706fcd3e01f4af74337744cbcc84ab60da82c40dd588469c6360258789\",\r\n      \"Matched Rule Name\": \"XMRIG_Miner\",\r\n      \"Strings to match are\": [\r\n            \"stratum+tcp\"\r\n      ],\r\n      \"Category\": [],\r\n      \"File Name\": \"/tmp/Deepfence/YaRadare/df_metal3dxmriglatest/ExtractedFiles/bad74b706fcd3e01f4af74337744cbcc84ab60da82c40dd588469c6360258789/usr/local/bin/xmrig\",\r\n      \"ref\":\"https://gist.github.com/GelosSnake/c2d4d6ef6f93ccb7d3afb5b1e26c7b4e \",\r\n      \"Summary\": \"The matched rule file's  ref  is https://gist.github.com/GelosSnake/c2d4d6ef6f93ccb7d3afb5b1e26c7b4e .\"\r\n    }\r\n
+write ,\r\n
+write    {\r\n      \"Image Layer ID\": \"bad74b706fcd3e01f4af74337744cbcc84ab60da82c40dd588469c6360258789\",\r\n      \"Matched Rule Name\": \"XMRIG_Miner\",\r\n      \"Strings to match are\": [\r\n            \"stratum+tcp\"\r\n      ],\r\n      \"Category\": [],\r\n      \"File Name\": \"/tmp/Deepfence/YaRadare/df_metal3dxmriglatest/ExtractedFiles/bad74b706fcd3e01f4af74337744cbcc84ab60da82c40dd588469c6360258789/xmrig-6.18.0/build/CMakeFiles/xmrig.dir/src/base/net/stratum/Url.cpp.o\",\r\n      \"ref\":\"https://gist.github.com/GelosSnake/c2d4d6ef6f93ccb7d3afb5b1e26c7b4e \",\r\n      \"Summary\": \"The matched rule file's  ref  is https://gist.github.com/GelosSnake/c2d4d6ef6f93ccb7d3afb5b1e26c7b4e .\"\r\n    }\r\n
+write ,\r\n
+write    {\r\n      \"Image Layer ID\": \"bad74b706fcd3e01f4af74337744cbcc84ab60da82c40dd588469c6360258789\",\r\n      \"Matched Rule Name\": \"Cerberus\",\r\n      \"Strings to match are\": [\r\n            \"cerberus\"\r\n      ],\r\n      \"Category\": [\"RAT\",\"memory\"],\r\n      \"File Name\": \"/tmp/Deepfence/YaRadare/df_metal3dxmriglatest/ExtractedFiles/bad74b706fcd3e01f4af74337744cbcc84ab60da82c40dd588469c6360258789/xmrig-6.18.0/src/3rdparty/fmt/README.rst\",\r\n      \"description\":\"Cerberus \",\r\n      \"author\":\"Jean-Philippe Teissier / @Jipe_ \",\r\n      \"date\":\"2013-01-12 \",\r\n      \"filetype\":\"memory \",\r\n      \"version\":\"1.0 \",\r\n      \"Summary\": \"The file /tmp/Deepfence/YaRadare/df_metal3dxmriglatest/ExtractedFiles/bad74b706fcd3e01f4af74337744cbcc84ab60da82c40dd588469c6360258789/xmrig-6.18.0/src/3rdparty/fmt/README.rst has a memory match.The file has a rule match that  Cerberus .The matched rule file's  author  is Jean-Philippe Teissier / @Jipe_ .The matched rule file's  date  is 2013-01-12 .The matched rule file's  filetype  is memory .The matched rule file's  version  is 1.0 .\"\r\n    }\r\n
+write ,\r\n
+
+
+write    {\r\n      \"Image Layer ID\": \"bad74b706fcd3e01f4af74337744cbcc84ab60da82c40dd588469c6360258789\",\r\n      \"Matched Rule Name\": \"XMRIG_Miner\",\r\n      \"Strings to match are\": [\r\n            \"stratum+tcp\"\r\n      ],\r\n      \"Category\": [],\r\n      \"File Name\": \"/tmp/Deepfence/YaRadare/df_metal3dxmriglatest/ExtractedFiles/bad74b706fcd3e01f4af74337744cbcc84ab60da82c40dd588469c6360258789/xmrig-6.18.0/src/base/net/stratum/Url.cpp\",\r\n      \"ref\":\"https://gist.github.com/GelosSnake/c2d4d6ef6f93ccb7d3afb5b1e26c7b4e \",\r\n      \"Summary\": \"The matched rule file's  ref  is https://gist.github.com/GelosSnake/c2d4d6ef6f93ccb7d3afb5b1e26c7b4e .\"\r\n    }\r\n
+
+write \r\n  ]
+write \r\n}\r\n
+
+pause 0.5
+prompt
+pause 2
+type cat /tmp/xmrig-scan.json | jq '.IOC[] | .\"Matched Rule Name\"'
+pause 0.2
+type \r\n
+
+write \u001b[0;32m\"XMRIG_Miner\"\u001b[0m\r\n\u001b[0;32m\"XMRIG_Miner\"\u001b[0m\r\n\u001b[0;32m\"Cerberus\"\u001b[0m\r\n\u001b[0;32m\"XMRIG_Miner\"\u001b[0m\r\n\u001b[0;32m\"XMRIG_Miner\"\u001b[0m\r\n\u001b[0;32m\"XMRIG_Miner\"\u001b[0m\r\n\u001b[0;32m\"Cerberus\"\u001b[0m\r\n\u001b[0;32m\"XMRIG_Miner\"\u001b[0m\r\n
+
+
+pause 0.5
+prompt
+
