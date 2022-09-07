@@ -140,14 +140,14 @@ function EnterpriseProducts() {
         title="Deepfence ThreatStryker"
         description="Observe, correlate, learn, and act to protect your cloud-native applications, across clouds and on-prem locations.  Built on ThreatMapper, ThreatStryker adds runtime telemetry, attack storyboarding, and targetted protection."
         icon="/img/products/threatstryker.svg"
-        docs="/docs/threatstryker"
+        docs="/threatstryker/docs/"
         readmore="https://deepfence.io/threatstryker"
       />
       <ProductCard
         title="Deepfence Cloud"
         description="A self-service portal where you can deploy dedicated, fully-managed ThreatStryker instances.  Empower your teams to secure and protect their cloud-native applications, at scale and across clouds and on-prem locations."
         icon="/img/products/cloud.svg"
-        docs="/docs/threatstryker/cloud"
+        docs="/threatstryker/docs/cloud/"
         readmore="https://deepfence.io/cloud/"
       />
     </Section>

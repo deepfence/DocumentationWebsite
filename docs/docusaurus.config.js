@@ -11,8 +11,8 @@ const config = {
   url: 'https://community.deepfence.io',
   baseUrl: '/',
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',
+  onBrokenLinks: 'warn',
+  onBrokenMarkdownLinks: 'warn',
   favicon: '/img/deepfence.png',
 
   // Even if you don't use internalization, you can use this field to set useful
@@ -141,13 +141,11 @@ const config = {
                 value: '<div class="nav-dropdown-title">Enterprise</div>',
               },
               {
-                type: 'doc',
-                docId: 'threatstryker/index',
+                href: 'threatstryker/docs',
                 label: 'ThreatStryker',
               },
               {
-                type: 'doc',
-                docId: 'threatstryker/cloud/index',
+                href: 'threatstryker/docs/cloud',
                 label: 'Deepfence Cloud',
               },
             ],
@@ -249,7 +247,7 @@ const config = {
               },
               {
                 label: 'ThreatStryker Docs',
-                to: '/docs/threatstryker',
+                href: 'threatstryker/docs',
               },
               {
                 label: 'Deepfence Cloud',
@@ -257,7 +255,7 @@ const config = {
               },
               {
                 label: 'Deepfence Cloud Docs',
-                to: '/docs/threatstryker/cloud',
+                href: 'threatstryker/docs/cloud',
               },
             ],
           },

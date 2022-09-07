@@ -10,6 +10,11 @@ RUN cd /root/docs/ \
     && make \
     && make build
 
+# Build individual docs
+RUN cd /root/product-docs/ThreatStryker-docs/docs \
+    && yarn \
+    && yarn build 
+
 FROM nginx:1.23-alpine
 MAINTAINER Deepfence Inc
 LABEL deepfence.role=system
@@ -22,3 +27,7 @@ RUN apk update \
     && mkdir -p /var/www/html \
     && chmod +x /docker-entrypoint.d/docker-entrypoint.sh
 COPY --from=build /root/docs/build /var/www/html
+
+# Copy individual docs
+RUN mkdir -p /var/www/html/threatstryker
+COPY --from=build /root/product-docs/ThreatStryker-docs/docs/build /var/www/html/threatstryker

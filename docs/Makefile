@@ -22,7 +22,6 @@ build:
 docs:
 	@echo Importing docs to ./docs
 	./import.pl threatmapper   --from ../product-docs/ThreatMapper/docs/docs --to docs
-	./import.pl threatstryker  --from ../product-docs/ThreatStryker-docs/docs/docs --to docs
 	./import.pl secretscanner  --from ../product-docs/SecretScanner/docs/docs --to docs
 	./import.pl packetstreamer --from ../product-docs/PacketStreamer/docs/docs --to docs
 	./import.pl flowmeter      --from ../product-docs/FlowMeter/docs/docs --to docs
@@ -32,7 +31,6 @@ docs:
 sidebars: 
 	@echo Copying sidebars to ./sidebars
 	cp ../product-docs/ThreatMapper/docs/sidebars.js       sidebars/threatmapper.js
-	cp ../product-docs/ThreatStryker-docs/docs/sidebars.js sidebars/threatstryker.js
 	cp ../product-docs/SecretScanner/docs/sidebars.js      sidebars/secretscanner.js
 	cp ../product-docs/PacketStreamer/docs/sidebars.js     sidebars/packetstreamer.js
 	cp ../product-docs/FlowMeter/docs/sidebars.js          sidebars/flowmeter.js
