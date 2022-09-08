@@ -404,11 +404,6 @@ a.theme-edit-this-page:hover:after {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-#video {
-  grid-column: 2 / span 2 
-}
-
-
 /* Card types: card (parent) and homepage or product */
 #hero .homepage-card {
   background: rgb( 128, 128, 128, 0.2 );
@@ -599,14 +594,4 @@ a.theme-edit-this-page:hover:after {
 
 
 
-@media screen and (max-width: 768px) {
-  .section-content {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
-  .two-cols .section-content {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
-  #video {
-    grid-column: 1;
-  }
-}
+

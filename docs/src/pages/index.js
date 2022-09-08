@@ -97,7 +97,7 @@ function OpenSourceProducts() {
         readmore="https://deepfence.io/threatmapper"
       />
       <div className="homepage-card card-content" id="video">
-        <ReactPlayer playing controls url='/img/threatmapper-intro.mp4' />
+        <ReactPlayer playing controls url='/img/threatmapper-intro.mp4' width="100%" height="100%" />
       </div>
       <ProductCard
         title="Deepfence SecretScanner"
