@@ -56,16 +56,16 @@ export function ProductCard({ id, icon, title, description, gh, docs, readmore }
   return (
       <div className="product-card card-content" id={id || paramCase(title)}>
         <div className="title">
-          <Link to={docs}>
+          <a href={docs}>
             {icon && <img className="icon" src={icon} />}
             <div className="heading">{title}</div>
-          </Link>
+          </a>
         </div>
         <div className="description">{description}</div>
         <div className="footnotes">
           { gh       && <div className="ghbutton"><GitHubButton href={`https://github.com/${gh}`} data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true" aria-label="Star {gh} on GitHub">GitHub</GitHubButton></div> }
           { gh       && <div className="ghbutton"><GitHubButton href={`https://github.com/${gh}/fork`} data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork {gh} on GitHub"></GitHubButton></div> }
-          { docs     && <div className="link"><Link to={docs}><Docs_svg/> Docs</Link></div> }
+          { docs     && <div className="link"><a href={docs}><Docs_svg/> Docs</a></div> }
           { readmore && <div className="link"><Link to={readmore}><More_svg/> More</Link></div> }
         </div>
       </div>
