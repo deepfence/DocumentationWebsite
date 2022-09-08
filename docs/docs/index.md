@@ -26,11 +26,11 @@ title: Deepfence Documentation
   <td><a href="/docs/flowmeter"><b>Deepfence FlowMeter</b></a><br/>Employ machine learning techniques to classify network flows based on packet headers.</td>
 </tr>
 <tr>
-  <td width="64"><a href="/docs/threatmapper"><img src='/img/products/threatstryker.svg'/></a></td>
-  <td><a href="/docs/threatstryker"><b>Deepfence ThreatStryker</b></a><br/>Observe, correlate, learn, and act to protect your cloud-native applications.</td>
+  <td width="64"><a href="/threatstryker/docs"><img src='/img/products/threatstryker.svg'/></a></td>
+  <td><a href="/threatstryker/docs"><b>Deepfence ThreatStryker</b></a><br/>Observe, correlate, learn, and act to protect your cloud-native applications.</td>
 </tr>
 <tr>
-  <td width="64"><a href="/docs/threatmapper"><img src='/img/products/cloud.svg'/></a></td>
-  <td><a href="/docs/threatstryker/cloud"><b>Deepfence Cloud</b></a><br/>A self-service portal for dedicated, fully-managed ThreatStryker instances.</td>
+  <td width="64"><a href="/threatstryker/docs/cloud"><img src='/img/products/cloud.svg'/></a></td>
+  <td><a href="/threatstryker/docs/cloud"><b>Deepfence Cloud</b></a><br/>A self-service portal for dedicated, fully-managed ThreatStryker instances.</td>
 </tr>
 </tbody></table>

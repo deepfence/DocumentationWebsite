@@ -1,0 +1,83 @@
+# flowmeter script
+
+writedelayshort 0.01
+writedelaylong  0.1
+typedelay 0.1
+
+prompt src
+type git clone 
+pause 0.2
+type https://github.com/deepfence/FlowMeter.git
+pause 0.2
+type \r\n
+
+pause 0.2
+write Cloning into 'FlowMeter'...\r\n
+
+write remote: Enumerating objects: 121, done.\u001b[K\r\nremote: Counting objects:   2% (1/37)\u001b[K\rremote: Counting objects:  16% (6/37)\u001b[K\rremote: Counting objects:  18% (7/37)\u001b[K\rremote: Counting objects:  32% (12/37)\u001b[K\rremote: Counting objects:  35% (13/37)\u001b[K\rremote: Counting objects:  48% (18/37)\u001b[K\rremote: Counting objects:  51% (19/37)\u001b[K\rremote: Counting objects:  64% (24/37)\u001b[K\rremote: Counting objects:  67% (25/37)\u001b[K\rremote: Counting objects:  81% (30/37)\u001b[K\rremote: Counting objects:  83% (31/37)\u001b[K\rremote: Counting objects:  97% (36/37)\u001b[K\rremote: Counting objects: 100% (37/37)\u001b[K\rremote: Counting objects: 100% (37/37), done.\u001b[K\r\nremote: Compressing objects:   3% (1/30)\u001b[K\rremote: Compressing objects:   6% (2/30)\u001b[K\rremote: Compressing objects:  10% (3/30)\u001b[K\rremote: Compressing objects:  33% (10/30)\u001b[K\rremote: Compressing objects:  36% (11/30)\u001b[K\rremote: Compressing objects:  60% (18/30)\u001b[K\rremote: Compressing objects:  63% (19/30)\u001b[K\rremote: Compressing objects:  86% (26/30)\u001b[K\rremote: Compressing objects:  90% (27/30)\u001b[K\rremote: Compressing objects: 100% (30/30)\u001b[K\rremote: Compressing objects: 100% (30/30), done.\u001b[K\r\nReceiving objects:   0% (1/121)\rReceiving objects:   1% (2/121)\rReceiving objects:   8% (10/121)\rReceiving objects:   9% (11/121)\rReceiving objects:  10% (13/121)\rReceiving objects:  17% (21/121)\rReceiving objects:  18% (22/121)\rReceiving objects:  19% (23/121)\rReceiving objects:  29% (36/121), 740.00 KiB | 1.35 MiB/s\rReceiving objects:  29% (36/121), 1.56 MiB | 1.45 MiB/s  \rReceiving objects:  35% (43/121), 6.47 MiB | 1.74 MiB/s\rReceiving objects:  36% (44/121), 6.47 MiB | 1.74 MiB/s\rReceiving objects:  37% (45/121), 6.47 MiB | 1.74 MiB/s\rReceiving objects:  38% (46/121), 6.47 MiB | 1.74 MiB/s\rReceiving objects:  39% (48/121), 6.47 MiB | 1.74 MiB/s\rReceiving objects:  40% (49/121), 6.47 MiB | 1.74 MiB/s\rReceiving objects:  41% (50/121), 6.47 MiB | 1.74 MiB/s\rReceiving objects:  49% (60/121), 6.47 MiB | 1.74 MiB/s\rReceiving objects:  50% (61/121), 6.47 MiB | 1.74 MiB/s\rReceiving objects:  51% (62/121), 6.47 MiB | 1.74 MiB/s\rReceiving objects:  52% (63/121), 6.47 MiB | 1.74 MiB/s\rReceiving objects:  53% (65/121), 6.47 MiB | 1.74 MiB/s\rReceiving objects:  54% (66/121), 6.47 MiB | 1.74 MiB/s\rReceiving objects:  55% (67/121), 6.47 MiB | 1.74 MiB/s\rReceiving objects:  63% (77/121), 6.47 MiB | 1.74 MiB/s\rReceiving objects:  64% (78/121), 6.47 MiB | 1.74 MiB/s\rReceiving objects:  65% (79/121), 6.47 MiB | 1.74 MiB/s\rReceiving objects:  66% (80/121), 6.47 MiB | 1.74 MiB/s\rReceiving objects:  67% (82/121), 6.47 MiB | 1.74 MiB/s\rReceiving objects:  68% (83/121), 6.47 MiB | 1.74 MiB/s\rReceiving objects:  69% (84/121), 6.47 MiB | 1.74 MiB/s\rReceiving objects:  77% (94/121), 6.47 MiB | 1.74 MiB/s\rReceiving objects:  78% (95/121), 6.47 MiB | 1.74 MiB/s\rReceiving objects:  79% (96/121), 6.47 MiB | 1.74 MiB/s\rReceiving objects:  80% (97/121), 6.47 MiB | 1.74 MiB/s\rReceiving objects:  81% (99/121), 6.47 MiB | 1.74 MiB/s\rReceiving objects:  82% (100/121), 6.47 MiB | 1.74 MiB/s\rReceiving objects:  83% (101/121), 6.47 MiB | 1.74 MiB/s\rReceiving objects:  92% (112/121), 9.40 MiB | 1.82 MiB/s\rReceiving objects:  93% (113/121), 9.40 MiB | 1.82 MiB/s\rReceiving objects:  94% (114/121), 9.40 MiB | 1.82 MiB/s\rReceiving objects:  95% (115/121), 9.40 MiB | 1.82 MiB/s\rReceiving objects:  96% (117/121), 9.40 MiB | 1.82 MiB/s\rReceiving objects:  97% (118/121), 9.40 MiB | 1.82 MiB/s\rReceiving objects:  98% (119/121), 9.40 MiB | 1.82 MiB/s\rReceiving objects:  99% (120/121), 9.40 MiB | 1.82 MiB/s\rReceiving objects: 100% (121/121), 9.40 MiB | 1.82 MiB/s\rReceiving objects: 100% (121/121), 9.83 MiB | 1.79 MiB/s, done.\r\nResolving deltas:   0% (0/31)\rResolving deltas:   9% (3/31)\rResolving deltas:  12% (4/31)\rResolving deltas:  16% (5/31)\rResolving deltas:  29% (9/31)\rResolving deltas:  32% (10/31)\rResolving deltas:  35% (11/31)\rResolving deltas:  54% (17/31)\rResolving deltas:  80% (25/31)\rResolving deltas:  90% (28/31)\rResolving deltas:  96% (30/31)\rResolving deltas: 100% (31/31)\rResolving deltas: 100% (31/31), done.\r\n
+pause 0.2
+write \r\n
+
+prompt
+pause 2
+
+type cd FlowMeter/pkg/
+pause 0.2
+type \r\n
+prompt pkg
+pause 1.5
+
+type go build -o flowmeter .
+pause 0.2
+type \r\n
+pause 1
+prompt
+pause 1.5
+
+type mkdir packets
+pause 0.2
+type \r\n
+pause 0.2
+prompt
+pause 1.5
+
+type wget -q 
+typefast https://deepfence-public.s3.amazonaws.com/pcap-datasets/webgoat.pcap 
+type -P packets
+pause 0.2
+type \r\n
+pause 2.2
+prompt
+pause 1
+
+type ./flowmeter -ifLiveCapture=false -fname=webgoat -maxNumPackets=40000000 -ifLocalIPKnown false
+pause 0.2
+type \r\n
+pause 0.2
+
+write \u001b[36mINFO\u001b[0m[0000] Live Capture: false                          \r\n\u001b[36mINFO\u001b[0m[0000] Target max number packets: 40000000          \r\n\u001b[36mINFO\u001b[0m[0000] Start Main method                            \r\n
+write \u001b[36mINFO\u001b[0m[0000] Analyzing offline pcap files.                \r\n
+write \u001b[36mINFO\u001b[0m[0007] 138.68.177.159--198.199.96.210--TCP--8080(http-alt)--58618: Benign 0.4202662651458417 \r\n\u001b[36mINFO\u001b[0m[0007]                                              \r\n\u001b[36mINFO\u001b[0m[0007] Source IP: 198.199.96.210                    \r\n\u001b[36mINFO\u001b[0m[0007] Dest IP: 138.68.177.159                      \r\n\u001b[36mINFO\u001b[0m[0007] Protocol: TCP                                \r\n\u001b[36mINFO\u001b[0m[0007] Source Port: 58618                           \r\n
+write \u001b[36mINFO\u001b[0m[0007] Dest Port: 8080(http-alt)                    \r\n\u001b[36mINFO\u001b[0m[0007] Flow Duration: 1.078433s                     \r\n\u001b[36mINFO\u001b[0m[0007] Flow Length: 19                              \r\n\u001b[36mINFO\u001b[0m[0007] Forward Flow Length: 0                       \r\n\u001b[36mINFO\u001b[0m[0007] Backward Flow Length: 19                     \r\n\u001b[36mINFO\u001b[0m[0007] Packet Size Total: 3857                      \r\n\u001b[36mINFO\u001b[0m[0007] Packet Size Mean: 203                        \r\n\u001b[36mINFO\u001b[0m[0007] Packet Size Std: 160.65261640538176          \r\n\u001b[36mINFO\u001b[0m[0007] Packet Size Min: 66                          \r\n\u001b[36mINFO\u001b[0m[0007] Packet Size Max: 394                         \r\n\u001b[36mINFO\u001b[0m[0007] Forward Packet Size Total: 0                 \r\n\u001b[36mINFO\u001b[0m[0007] Backward Packet Size Total: 3857             \r\n\u001b[36mINFO\u001b[0m[0007] Forward Packet Size Mean: 0                  \r\n\u001b[36mINFO\u001b[0m[0007] Backward Packet Size Mean: 203               \r\n\u001b[36mINFO\u001b[0m[0007] Forward Packet Size Std: 0                   \r\n\u001b[36mINFO\u001b[0m[0007]
+write  Backward Packet Size Std: 160.65261640538176 \r\n\u001b[36mINFO\u001b[0m[0007] Forward Packet Size Min: 0                   \r\n\u001b[36mINFO\u001b[0m[0007] Backward Packet Size Min: 66                 \r\n\u001b[36mINFO\u001b[0m[0007] Forward Packet Size Max: 0                   \r\n\u001b[36mINFO\u001b[0m[0007] Backward Packet Size Max: 394                \r\n\u001b[36mINFO\u001b[0m[0007] IAT Total: 1.078433s                         \r\n\u001b[36mINFO\u001b[0m[0007] IAT Mean: 59.912ms                           \r\n\u001b[36mINFO\u001b[0m[0007] IAT Std: 63.486ms                            \r\n\u001b[36mINFO\u001b[0m[0007] IAT Min: 141µs                               \r\n\u001b[36mINFO\u001b[0m[0007] IAT Max: 136.924ms                           \r\n\u001b[36mINFO\u001b[0m[0007] Forward IAT Total: 0s                        \r\n\u001b[36mINFO\u001b[0m[0007] Backward IAT Total: 1.078433s                \r\n\u001b[36mINFO\u001b[0m[0007] Forward IAT Mean: 0s                         \r\n\u001b[36mINFO\u001b[0m[0007] Backward IAT Mean: 59.912ms                  \r\n\u001b[36mINFO\u001b[0m[0007] Forward IAT Std: 0s                          \r\n\u001b[36mINFO\u001b[0m[0007] Backward IAT Std:
+write  63.486ms                   \r\n\u001b[36mINFO\u001b[0m[0007] Forward IAT Min: 0s                          \r\n\u001b[36mINFO\u001b[0m[0007] Backward IAT Min: 141µs                      \r\n\u001b[36mINFO\u001b[0m[0007] Forward IAT Max: 0s                          \r\n\u001b[36mINFO\u001b[0m[0007] Backward IAT Max: 136.924ms                  \r\n\u001b[36mINFO\u001b[0m[0007] Flow Start Time: 2021-05-03 23:59:26.352782 +0000 UTC \r\n\u001b[36mINFO\u001b[0m[0007] Flow Latest Time: 2021-05-03 23:59:27.431215 +0000 UTC \r\n\u001b[36mINFO\u001b[0m[0007] Flow Length Per Time(ms) : 0.017625231910946195 \r\n\u001b[36mINFO\u001b[0m[0007] Forward Flow Length Per Time(ms) : 0         \r\n\u001b[36mINFO\u001b[0m[0007] Backward Flow Length Per Time(ms) : 0.017625231910946195 \r\n\u001b[36mINFO\u001b[0m[0007] Packet Size Per Time(ms) : 3.5779220779220777 \r\n\u001b[36mINFO\u001b[0m[0007] Forward Packet Size Per Time(ms) : 0         \r\n\u001b[36mINFO\u001b[0m[0007] Backward Packet Size Per Time(ms) : 3.5779220779220777 \r\n\u001b[36mINFO\u001b[0m[0007]                                              \r\n\u001b[36mINFO\u001b[0m[0007]                                              \r\n\u001b[36mINFO\u001b
+write [0m[0007] 198.199.96.210--138.68.177.159--TCP--50020--8080(http-alt): Malicious 0.9890957420184309 \r\n\u001b[36mINFO\u001b[0m[0007]                                              \r\n\u001b[36mINFO\u001b[0m[0007] Source IP: 138.68.177.159                    \r\n\u001b[36mINFO\u001b[0m[0007] Dest IP: 198.199.96.210                      \r\n\u001b[36mINFO\u001b[0m[0007] Protocol: TCP                                \r\n\u001b[36mINFO\u001b[0m[0007] Source Port: 8080(http-alt)                  \r\n\u001b[36mINFO\u001b[0m[0007] Dest Port: 50020                             \r\n\u001b[36mINFO\u001b[0m[0007] Flow Duration: 535.884ms                     \r\n\u001b[36mINFO\u001b[0m[0007] Flow Length: 83                              \r\n\u001b[36mINFO\u001b[0m[0007] Forward Flow Length: 0                       \r\n\u001b[36mINFO\u001b[0m[0007] Backward Flow Length: 83                     \r\n\u001b[36mINFO\u001b[0m[0007] Packet Size Total: 193066                    \r\n\u001b[36mINFO\u001b[0m[0007] Packet Size Mean: 2326.0963855421687         \r\n\u001b[36mINFO\u001b[0m[0007] Packet Size Std: 1129.9079140904728          \r\n\u001b[36mINFO\u001b[0m[0007] Packet Size Min: 103\r\n
+
+
+write \u001b[36mINFO\u001b[0m[0007] IAT Std: 41.029ms                            \r\n\u001b[36mINFO\u001b[0m[0007] IAT Min: 1µs                                 \r\n\u001b[36mINFO\u001b[0m[0007] IAT Max: 132.102ms                           \r\n
+write \u001b[36mINFO\u001b[0m[0007] Forward IAT Total: 0s                        \r\n\u001b[36mINFO\u001b[0m[0007] Backward IAT Total: 391.527ms                \r\n
+write \u001b[36mINFO\u001b[0m[0007] Forward IAT Mean: 0s                         \r\n\u001b[36mINFO\u001b[0m[0007] Backward IAT Mean: 21.751ms                  \r\n
+write \u001b[36mINFO\u001b[0m[0007] Forward IAT Std: 0s                          \r\n\u001b[36mINFO\u001b[0m[0007] Backward IAT Std: 41.029ms                   
+write \r\n\u001b[36mINFO\u001b[0m[0007] Forward IAT Min: 0s                          \r\n\u001b[36mINFO\u001b[0m[0007] Backward IAT Min: 1µs                        \r\n
+write \u001b[36mINFO\u001b[0m[0007] Forward IAT Max: 0s                          \r\n\u001b[36mINFO\u001b[0m[0007] Backward IAT Max: 132.102ms                  \r\n
+write \u001b[36mINFO\u001b[0m[0007] Flow Start Time: 2021-05-03 23:59:32.355609 +0000 UTC \r\n
+write \u001b[36mINFO\u001b[0m[0007] Flow Latest Time: 2021-05-03 23:59:32.747136 +0000 UTC \r\n
+write \u001b[36mINFO\u001b[0m[0007] Flow Length Per Time(ms) : 0.04859335038363171 \r\n
+write \u001b[36mINFO\u001b[0m[0007] Forward Flow Length Per Time(ms) : 0         \r\n\u001b[36mINFO\u001b[0m[0007] Backward Flow Length Per Time(ms) : 0.04859335038363171 \r\n\u001b[36mINFO\u001b[0m[0007] Packet Size Per Time(ms) : 117.61381074168798 
+write \r\n\u001b[36mINFO\u001b[0m[0007] Forward Packet Size Per Time(ms) : 0         \r\n\u001b[36mINFO\u001b[0m[0007] Backward Packet Size Per Time(ms) : 117.61381074168798 
+
+write \r\n
+
+pause 0.2
+prompt
+

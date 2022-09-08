@@ -11,8 +11,8 @@ const config = {
   url: 'https://community.deepfence.io',
   baseUrl: '/',
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',
+  onBrokenLinks: 'warn',
+  onBrokenMarkdownLinks: 'warn',
   favicon: '/img/deepfence.png',
 
   // Even if you don't use internalization, you can use this field to set useful
@@ -59,8 +59,8 @@ const config = {
         theme: {
           customCss: require.resolve('./static/css/deepfence.css'),
         },
-        googleAnalytics: {
-          trackingID: 'UA-74324220-1',
+        gtag: {
+          trackingID: 'G-39Y0P23F1G',
           anonymizeIP: false,
         },
       }),
@@ -112,43 +112,36 @@ const config = {
                 value: '<div class="nav-dropdown-title">Open Source</div>',
               },
               {
-                type: 'doc',
-                docId: 'threatmapper/index',
-                label: 'ThreatMapper',
+                type: 'html',
+                value: '<a class="dropdown__link" href="/docs/threatmapper">ThreatMapper</a>',
               },
               {
-                type: 'doc',
-                docId: 'secretscanner/index',
-                label: 'SecretScanner',
+                type: 'html',
+                value: '<a class="dropdown__link" href="/docs/secretscanner">SecretScanner</a>',
               },
               {
-                type: 'doc',
-                docId: 'yarahunter/index',
-                label: 'YaraHunter',
+                type: 'html',
+                value: '<a class="dropdown__link" href="/docs/yarahunter">YaraHunter</a>',
               },
               {
-                type: 'doc',
-                docId: 'packetstreamer/index',
-                label: 'PacketStreamer',
+                type: 'html',
+                value: '<a class="dropdown__link" href="/docs/packetstreamer">PacketStreamer</a>',
               },
               {
-                type: 'doc',
-                docId: 'flowmeter/index',
-                label: 'FlowMeter',
+                type: 'html',
+                value: '<a class="dropdown__link" href="/docs/flowmeter">FlowMeter</a>',
               },
               {
                 type: 'html',
                 value: '<div class="nav-dropdown-title">Enterprise</div>',
               },
               {
-                type: 'doc',
-                docId: 'threatstryker/index',
-                label: 'ThreatStryker',
+                type: 'html',
+                value: '<a class="dropdown__link" href="/threatstryker/docs">ThreatStryker</a>',
               },
               {
-                type: 'doc',
-                docId: 'threatstryker/cloud/index',
-                label: 'Deepfence Cloud',
+                type: 'html',
+                value: '<a class="dropdown__link" href="/threatstryker/docs/cloud">Deepfence Cloud</a>',
               },
             ],
           },
@@ -198,24 +191,19 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'ThreatMapper',
-                to: '/docs/threatmapper',
+                html: '<a class="footer__link-item" href="/docs/threatmapper">ThreatMapper</a>',
               },
               {
-                label: 'SecretScanner',
-                to: '/docs/secretscanner',
+                html: '<a class="footer__link-item" href="/docs/secretscanner">SecretScanner</a>',
               },
               {
-                label: 'YaraHunter',
-                to: '/docs/yarahunter',
+                html: '<a class="footer__link-item" href="/docs/yarahunter">YaraHunter</a>',
               },
               {
-                label: 'PacketStreamer',
-                to: '/docs/packetstreamer',
+                html: '<a class="footer__link-item" href="/docs/packetstreamer">PacketStreamer</a>',
               },
               {
-                label: 'FlowMeter',
-                to: '/docs/flowmeter',
+                html: '<a class="footer__link-item" href="/docs/flowmeter">PacketStreamer</a>',
               },
             ],
           },
@@ -231,7 +219,7 @@ const config = {
                 href: 'https://twitter.com/deepfence',
               },
               {
-                label: 'Youtube',
+                label: 'YouTube',
                 href: 'https://www.youtube.com/channel/UCklvbuOjnzpmtXy-g97tfWQ',
               },
               {
@@ -248,16 +236,14 @@ const config = {
                 href: 'https://deepfence.io/threatstryker',
               },
               {
-                label: 'ThreatStryker Docs',
-                to: '/docs/threatstryker',
+                html: '<a class="footer__link-item" href="/threatstryker/docs">ThreatStryker</a>',
               },
               {
                 label: 'Deepfence Cloud',
                 href: 'https://deepfence.cloud',
               },
               {
-                label: 'Deepfence Cloud Docs',
-                to: '/docs/threatstryker/cloud',
+                html: '<a class="footer__link-item" href="/threatstryker/docs/cloud">Deepfence Cloud Docs</a>',
               },
             ],
           },

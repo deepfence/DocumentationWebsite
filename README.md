@@ -74,6 +74,14 @@ Alternatively, you can build-and-serve the site as follows:
 yarn run serve --build --port 8000 --host 0.0.0.0
 ```
 
+## Docker image
+
+```bash
+./bootstrap.sh
+docker build -f Dockerfile -t deepfenceio/deepfence_docs:latest .
+docker run -dit --restart=always --name=deepfence-docs -e GITHUB_USER=aaa -e GITHUB_ACCESS_TOKEN=aaa -p 80:80 deepfenceio/deepfence_docs
+```
+
 ## Hosting the site
 
 The site is intended to be hosted behind two domains:
@@ -81,7 +89,7 @@ The site is intended to be hosted behind two domains:
  * `community.mydomain.com`: the primary domain to be used to serve the site
  * `docs.mydomain.com`: used to provide links to the docs, particularly for the enterprise product documentation where a 'community' domain would not be appropriate.
 
-It's an anti pattern to serve an SPA from multiple domains, and switch domains during routing. Configuration is non-trivial and the user experience is poor as a change of domain means a full reload of the SPA. Therefore, `docs.mydomain.com/productname` redirects to `community.mydomain.com/docs/productname` to achieve this.
+It's an antipattern to serve an SPA from multiple domains, and switch domains during routing. Configuration is non-trivial and the user experience is poor as a change of domain means a full reload of the SPA. Therefore, `docs.mydomain.com/productname` redirects to `community.mydomain.com/docs/productname` to achieve this.
 
 The following, minimal NGINX configuration is sufficient:
 
@@ -134,24 +142,24 @@ Follow these steps if you'd like to add docs to a new Deepfence project, and to 
 
 ### Get the Skeleton Files
 
-Check out the github repo you wish to add docs to.
+Check out the GitHub repo you wish to add docs to.
 
 Remove (back-up) any existing `/docs/` directory in the repo.
 
 Copy `skel/docs` into the root of the repo, to create a new `/docs/` directory.  This directory contains:
 
-| Filename | Purpose |
-| -------- | ------- |
-| `docs/docusaurus.config.js` | Sample configuration for your docusaurus docs site |
-| `docs/sidebars.js` | Sample sidebar for your documentation tree |
-| `docs/README.md` | README for the docs in your new repo, with build instructions |
-| `docs/docs/threatmapper` | Location for your docs files (must rename first) |
-| `docs/docs/threatmapper/index.md` | Your first documentation file |
-| In `docs/static:`<br/> `css/deepfence.css`,<br/> `img/deepfence-logo-black.svg`,<br/> `img/deepfence-logo-white.svg` | Styling for the deepfence skin for the `classic` theme |
-| `docs/src/pages/index.md` | Default home page for Deepfence docs; no need to edit |
-| `docs/yarn.lock`, `docs/package.json` | NPM package list, used when initialized with `yarn` |
-| `docs/.gitignore` | Configuration to ignore node dependencies and temporary files |
-| `docs/babel.config.js` | Babel config |
+| Filename                                                                                                             | Purpose                                                       |
+|----------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------|
+| `docs/docusaurus.config.js`                                                                                          | Sample configuration for your docusaurus docs site            |
+| `docs/sidebars.js`                                                                                                   | Sample sidebar for your documentation tree                    |
+| `docs/README.md`                                                                                                     | README for the docs in your new repo, with build instructions |
+| `docs/docs/threatmapper`                                                                                             | Location for your docs files (must rename first)              |
+| `docs/docs/threatmapper/index.md`                                                                                    | Your first documentation file                                 |
+| In `docs/static:`<br/> `css/deepfence.css`,<br/> `img/deepfence-logo-black.svg`,<br/> `img/deepfence-logo-white.svg` | Styling for the deepfence skin for the `classic` theme        |
+| `docs/src/pages/index.md`                                                                                            | Default home page for Deepfence docs; no need to edit         |
+| `docs/yarn.lock`, `docs/package.json`                                                                                | NPM package list, used when initialized with `yarn`           |
+| `docs/.gitignore`                                                                                                    | Configuration to ignore node dependencies and temporary files |
+| `docs/babel.config.js`                                                                                               | Babel config                                                  |
 
 These are the basic skeleton files needed to create a local docs site.
 
@@ -168,14 +176,14 @@ Rename the `docs/threatmapper` directory to be product-appropriate, e.g. `packet
 Edit `docusaurus.config.js` to make it product-appropriate.  You'll want to replace:
 
 1. config.title
-1. config.tagline
-1. config.presets.docs.editURL
-1. themeconfig.navbar.items[0]
+2. config.tagline
+3. config.presets.docs.editURL
+4. themeconfig.navbar.items[0]
 
 Edit `sidebars.js`:
 
 1. Replace the name of the sidebar object to the appropriate product name.  
-1. Correct the value in the `sidebar-title`
+2. Correct the value in the `sidebar-title`
 
 You will want to edit sidebars.js further, to define the nav structure of the documentation, but that can wait.
 
