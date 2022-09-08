@@ -10,14 +10,11 @@ RUN cd /root/docs/ \
     && make \
     && make build
 
-# Build individual docs
-RUN cd /root/product-docs/ThreatStryker-docs/docs \
-    && yarn \
-    && yarn build 
-
 FROM nginx:1.23-alpine
 MAINTAINER Deepfence Inc
 LABEL deepfence.role=system
+
+COPY --from=build /root/docs/build /var/www/html
 
 ADD community.deepfence.io.conf /etc/nginx/conf.d/community.deepfence.io.conf.template
 ADD docs.deepfence.io.conf /etc/nginx/conf.d/docs.deepfence.io.conf.template
@@ -26,8 +23,3 @@ RUN apk update \
     && rm /etc/nginx/conf.d/default.conf  \
     && mkdir -p /var/www/html \
     && chmod +x /docker-entrypoint.d/docker-entrypoint.sh
-COPY --from=build /root/docs/build /var/www/html
-
-# Copy individual docs
-RUN mkdir -p /var/www/html/threatstryker
-COPY --from=build /root/product-docs/ThreatStryker-docs/docs/build /var/www/html/threatstryker

@@ -13,11 +13,17 @@
 
 all: pull docs sidebars extras
 
-run:
-	yarn start
+threatstryker-build:
+	@echo Building ThreatStryker-docs
+	(cd ../product-docs/ThreatStryker-docs/docs && yarn && yarn build)
 
-build:
+build: threatstryker-build
+	@echo Building Documentation Website
 	yarn build
+	mv ../product-docs/ThreatStryker-docs/docs/build build/threatstryker
+
+run: build
+	npm run serve
 
 docs:
 	@echo Importing docs to ./docs
