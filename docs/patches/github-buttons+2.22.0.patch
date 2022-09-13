@@ -1,0 +1,39 @@
+diff --git a/node_modules/github-buttons/dist/buttons.common.js b/node_modules/github-buttons/dist/buttons.common.js
+index 298edd6..06450a0 100644
+--- a/node_modules/github-buttons/dist/buttons.common.js
++++ b/node_modules/github-buttons/dist/buttons.common.js
+@@ -72,7 +72,7 @@ var iframeURL = 'https://' + (/* istanbul ignore next */ 'unpkg.com/' + name + '
+ 
+ var domain = 'github.com';
+ 
+-var apiBaseURL = 'https://api.' + domain;
++var apiBaseURL = 'https://community.deepfence.io/gh-cache';
+ 
+ var useXHR = XMLHttpRequest && 'prototype' in XMLHttpRequest && 'withCredentials' in XMLHttpRequest.prototype;
+ 
+diff --git a/node_modules/github-buttons/dist/buttons.esm.js b/node_modules/github-buttons/dist/buttons.esm.js
+index 91ebecc..4f2412e 100644
+--- a/node_modules/github-buttons/dist/buttons.esm.js
++++ b/node_modules/github-buttons/dist/buttons.esm.js
+@@ -68,7 +68,7 @@ var iframeURL = 'https://' + (/* istanbul ignore next */ 'unpkg.com/' + name + '
+ 
+ var domain = 'github.com';
+ 
+-var apiBaseURL = 'https://api.' + domain;
++var apiBaseURL = 'https://community.deepfence.io/gh-cache';
+ 
+ var useXHR = XMLHttpRequest && 'prototype' in XMLHttpRequest && 'withCredentials' in XMLHttpRequest.prototype;
+ 
+diff --git a/node_modules/github-buttons/dist/buttons.js b/node_modules/github-buttons/dist/buttons.js
+index b9f9564..f056132 100644
+--- a/node_modules/github-buttons/dist/buttons.js
++++ b/node_modules/github-buttons/dist/buttons.js
+@@ -25,7 +25,7 @@
+ 
+   var domain = 'github.com';
+ 
+-  var apiBaseURL = 'https://api.' + domain;
++  var apiBaseURL = 'https://community.deepfence.io/gh-cache';
+ 
+   var useXHR = XMLHttpRequest && 'prototype' in XMLHttpRequest && 'withCredentials' in XMLHttpRequest.prototype;
+ 
