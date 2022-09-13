@@ -32,20 +32,25 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           
           editUrl: ({ versionDocsDirPath, docPath, locale }) => {
-            const repo = {
-              threatmapper:   'https://github.com/deepfence/ThreatMapper',
+            const repoMain = {
               threatstryker:  'https://github.com/deepfence/ThreatStryker-docs',
-              secretscanner:  'https://github.com/deepfence/SecretScanner',
               packetstreamer: 'https://github.com/deepfence/PacketStreamer',
               flowmeter:      'https://github.com/deepfence/FlowMeter',
               yarahunter:     'https://github.com/deepfence/YaraHunter'
+            };
+            const repoMaster = {
+              threatmapper:   'https://github.com/deepfence/ThreatMapper',
+              secretscanner:  'https://github.com/deepfence/SecretScanner',
             };
             var match;
             if(( match = docPath.match( /([^\/]*)\/(.*).md/ )) != null ) {
               var product  = match[1];
               var filepath = match[2];
-              if( repo[product] != null ) {
-                return `${repo[product]}/edit/main/docs/docs/${product}/${filepath}.md`;
+              if( repoMain[product] != null ) {
+                return `${repoMain[product]}/edit/main/docs/docs/${product}/${filepath}.md`;
+              }
+              if( repoMaster[product] != null ) {
+                return `${repoMaster[product]}/edit/master/docs/docs/${product}/${filepath}.md`;
               }
             }
           },
