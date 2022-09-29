@@ -27,10 +27,10 @@ title: Deepfence Documentation
 </tr>
 <tr>
   <td width="64"><a href="/threatstryker/docs"><img src='/img/products/threatstryker.svg'/></a></td>
-  <td><a href="/threatstryker/docs"><b>Deepfence ThreatStryker</b></a><br/>Observe, correlate, learn, and act to protect your cloud-native applications.</td>
+  <td><a target="_blank" href="/threatstryker/docs"><b>Deepfence ThreatStryker</b></a><br/>Observe, correlate, learn, and act to protect your cloud-native applications.</td>
 </tr>
 <tr>
   <td width="64"><a href="/threatstryker/docs/cloud"><img src='/img/products/cloud.svg'/></a></td>
-  <td><a href="/threatstryker/docs/cloud"><b>Deepfence Cloud</b></a><br/>A self-service portal for dedicated, fully-managed ThreatStryker instances.</td>
+  <td><a target="_blank" href="/threatstryker/docs/cloud"><b>Deepfence Cloud</b></a><br/>A self-service portal for dedicated, fully-managed ThreatStryker instances.</td>
 </tr>
 </tbody></table>
