@@ -1,4 +1,4 @@
-FROM node:16.14.2-alpine3.15 AS build
+FROM node:16.17.1-alpine3.16 AS build
 
 ADD . /root
 ENV NPM_CONFIG_LOGLEVEL=warn NPM_CONFIG_PROGRESS=false NODE_OPTIONS="--max_old_space_size=4096"
