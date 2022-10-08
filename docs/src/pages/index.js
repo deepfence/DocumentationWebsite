@@ -39,7 +39,7 @@ function HeroBanner() {
        We try to route all github api calls through https://community.deepfence.io/gh-proxy ; see also the patch to
        github-buttons. The gh-proxy will cache GH API requests so as to reduce the load on github and reduce the 
        likelihood of exceeding their rate limits and getting a 403 response */
-    const repos = [ 'ThreatMapper', 'SecretScanner', 'YaraHunter', 'PacketStreamer', 'FlowMeter' ];
+    const repos = [ 'ThreatMapper', 'SecretScanner', 'YaraHunter', 'PacketStreamer', 'FlowMeter', 'community', 'package-scanner', 'CI-CD-Integrations', 'secretscanner-docker-extension', 'yarahunter-docker-extension' ];
     if( Array.isArray( data ) ) {
       var stars = data.reduce((acc, curr) => {
         return repos.includes(curr.name) ? acc + curr.stargazers_count : acc ;
