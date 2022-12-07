@@ -1,24 +1,24 @@
 [submodule "product-docs/ThreatMapper"]
-	path = product-docs/ThreatMapper
-	url = git@github.com:deepfence/ThreatMapper.git
-	branch = master
+        path = product-docs/ThreatMapper
+        url = https://github.com/deepfence/ThreatMapper
+        branch = master
 [submodule "product-docs/SecretScanner"]
-	path = product-docs/SecretScanner
-	url = git@github.com:deepfence/SecretScanner.git
-	branch = master
+        path = product-docs/SecretScanner
+        url = https://github.com/deepfence/SecretScanner
+        branch = master
 [submodule "product-docs/PacketStreamer"]
-	path = product-docs/PacketStreamer
-	url = git@github.com:deepfence/PacketStreamer.git
-	branch = main
+        path = product-docs/PacketStreamer
+        url = https://github.com/deepfence/PacketStreamer
+        branch = main
 [submodule "product-docs/FlowMeter"]
-	path = product-docs/FlowMeter
-	url = git@github.com:deepfence/FlowMeter.git
-	branch = main
+        path = product-docs/FlowMeter
+        url = https://github.com/deepfence/FlowMeter
+        branch = main
 [submodule "product-docs/ThreatStryker-docs"]
-	path = product-docs/ThreatStryker-docs
-	url = git@github.com:deepfence/ThreatStryker-docs.git
-	branch = main
+        path = product-docs/ThreatStryker-docs
+        url = https://github.com/deepfence/ThreatStryker-docs
+        branch = main
 [submodule "product-docs/YaraHunter"]
-	path = product-docs/YaraHunter
-	url = git@github.com:deepfence/YaraHunter.git
-	branch = main
+        path = product-docs/YaraHunter
+        url = https://github.com/deepfence/YaraHunter
+        branch = main
