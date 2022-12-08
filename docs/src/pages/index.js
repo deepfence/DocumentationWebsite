@@ -132,6 +132,23 @@ function OpenSourceProducts() {
   );
 }
 
+function OpenSourceContributions() {
+  return (
+    <div>
+      <Section title="Projects we love and contribute to" className="two-cols">
+        <ProductCard
+          title="Aya"
+          description="Aya is an eBPF library built with a focus on operability and developer experience. It does not rely on libbpf nor bcc - it's built from the ground up purely in Rust, using only the libc crate to execute syscalls."
+          icon="https://aya-rs.dev/assets/images/crabby.svg"
+          gh="aya-rs/aya"
+          docs="https://aya-rs.dev/book"
+        />
+      </Section>
+    </div>
+  );
+}
+
+
 function EnterpriseProducts() {
   return (
   <div>
@@ -177,6 +194,7 @@ export default function HomePage() {
         <div className={styles.maincontent}>
           <OpenSourceProducts />
           <EnterpriseProducts />
+          <OpenSourceContributions />
           <Community />
         </div>
       </main>
