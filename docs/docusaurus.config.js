@@ -86,7 +86,7 @@ const config = {
       announcementBar: {
         id: 'support_threatmapper',
         content:
-          '⭐️ If you like ThreatMapper, please <a href="https://github.com/deepfence/ThreatMapper" target="_blank">star it on GitHub</a> ⭐️',
+          'Show your love for ThreatMapper, the open-source CNAPP, by <a href="https://github.com/deepfence/ThreatMapper" target="_blank">giving it a star on GitHub</a>',
         isCloseable: false
       },
       navbar: {
