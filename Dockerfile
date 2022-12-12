@@ -7,7 +7,9 @@ RUN cd /root/docs/ \
     && apk add --no-cache git bash make g++ perl automake autoconf \
     && chmod +x import.pl \
     && yarn add docusaurus \
+    && yarn add @crowdin/cli@3 \
     && make \
+    && yarn run crowdin download\
     && make build
 
 FROM nginx:1.23-alpine
