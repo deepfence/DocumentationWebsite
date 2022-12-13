@@ -6,4 +6,5 @@ files:
   # Docs Markdown files
   - source: /docs/threatmapper/**/*
     dest: /threatmapper/**/%original_file_name%
-    translation: /i18n/%locale%/docusaurus-plugin-content-docs/current/threatmapper/**/%original_file_name%
+    #translation: /i18n/%locale%/docusaurus-plugin-content-docs/current/threatmapper/**/%original_file_name%
+    translation: /%locale%/threatmapper/**/%original_file_name%

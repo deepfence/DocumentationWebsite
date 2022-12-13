@@ -12,8 +12,12 @@ RUN cd /root/docs/ \
     && apk add --no-cache git bash make g++ perl automake autoconf \
     && chmod +x import.pl \
     && yarn add docusaurus \
+    && crowdin download \
+    && mkidir -p i18n/zh-CN/docusaurus-plugin-content-docs/current/ \
+    && mkidir -p i18n/zh-TW/docusaurus-plugin-content-docs/current/ \
+    && mv zh-CN/threatmapper i18n/zh-CN/docusaurus-plugin-content-docs/current/threatmapper \
+    && mv zh-TW/threatmapper i18n/zh-CN/docusaurus-plugin-content-docs/current/threatmapper \
     && make \
-    && crowdin download\
     && make build
 
 FROM nginx:1.23-alpine
