@@ -19,7 +19,7 @@ RUN cd /root/docs/ \
     && chmod +x import.pl \
     && yarn add docusaurus \
     && make \
-    && yarn run crowdin download\
+    && npm run crowdin download\
     && make build
 
 FROM nginx:1.23-alpine
