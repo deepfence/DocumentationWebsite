@@ -13,10 +13,12 @@ RUN cd /root/docs/ \
     && chmod +x import.pl \
     && yarn add docusaurus \
     && crowdin download \
+    && cp -R docs/threatmapper/img zh-CN/threatmapper/img \
+    && cp -R docs/threatmapper/img zh-TW/threatmapper/img \
     && mkdir -p i18n/zh-CN/docusaurus-plugin-content-docs/current/ \
     && mkdir -p i18n/zh-TW/docusaurus-plugin-content-docs/current/ \
     && mv zh-CN/threatmapper i18n/zh-CN/docusaurus-plugin-content-docs/current/threatmapper \
-    && mv zh-TW/threatmapper i18n/zh-CN/docusaurus-plugin-content-docs/current/threatmapper \
+    && mv zh-TW/threatmapper i18n/zh-TW/docusaurus-plugin-content-docs/current/threatmapper \
     && make \
     && make build
 
