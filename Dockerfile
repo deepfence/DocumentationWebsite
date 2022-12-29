@@ -15,10 +15,13 @@ RUN cd /root/docs/ \
     && crowdin download \
     && cp -R docs/threatmapper/img zh-CN/threatmapper/img \
     && cp -R docs/threatmapper/img zh-TW/threatmapper/img \
+    && cp -R docs/threatmapper/img es-ES/threatmapper/img \
     && mkdir -p i18n/zh-CN/docusaurus-plugin-content-docs/current/ \
     && mkdir -p i18n/zh-TW/docusaurus-plugin-content-docs/current/ \
+    && mkdir -p i18n/es-ES/docusaurus-plugin-content-docs/current/ \
     && mv zh-CN/threatmapper i18n/zh-CN/docusaurus-plugin-content-docs/current/threatmapper \
     && mv zh-TW/threatmapper i18n/zh-TW/docusaurus-plugin-content-docs/current/threatmapper \
+    && mv es-ES/threatmapper i18n/es-ES/docusaurus-plugin-content-docs/current/threatmapper\
     && make \
     && make build
 
