@@ -1,5 +1,5 @@
 project_id: '554061'
-api_token: '0d8083f3f4b4efd9ee7ed9bfc535d6de080564c4fd0d488ca4b43e9396c75b4e5b905c0a0e78a5c2'
+api_token_env: 'CROWDIN_PERSONAL_TOKEN'
 base_path: '/root/docs'
 preserve_hierarchy: true
 files:
