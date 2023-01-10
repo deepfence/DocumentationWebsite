@@ -1,5 +1,5 @@
 project_id: '554061'
-api_token_env: 'CROWDIN_PERSONAL_TOKEN'
+api_token: 'CROWDIN_PERSONAL_TOKEN'
 base_path: '/root/docs'
 preserve_hierarchy: true
 files:

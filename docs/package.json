@@ -16,6 +16,7 @@
     "postinstall": "patch-package"
   },
   "dependencies": {
+    "@crowdin/cli": "^3.9.1",
     "@docusaurus/core": "^2.2.0",
     "@docusaurus/plugin-google-analytics": "^2.2.0",
     "@docusaurus/preset-classic": "^2.2.0",
@@ -28,8 +29,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-github-btn": "^1.4.0",
-    "react-player": "^2.10.1",
-    "@crowdin/cli": "^3.9.1"
+    "react-player": "^2.10.1"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^2.2.0"
