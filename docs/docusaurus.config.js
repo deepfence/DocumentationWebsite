@@ -20,7 +20,7 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'zh-CN', 'zh-TW'],
   },
 
   presets: [
@@ -149,6 +149,10 @@ const config = {
                 value: '<a class="dropdown__link" href="/threatstryker/docs/cloud">Deepfence Cloud</a>',
               },
             ],
+          },
+          {
+            type: 'localeDropdown',
+            position: 'left',
           },
           {
             href: 'https://deepfence.io',

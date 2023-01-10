@@ -1,5 +1,10 @@
-FROM node:16.17.1-alpine3.16 AS build
+FROM crowdin/cli:3.9.1 AS build
 
+RUN set -eux \
+    & apk add \
+        --no-cache \
+        nodejs \
+        yarn
 ADD . /root
 ENV NPM_CONFIG_LOGLEVEL=warn NPM_CONFIG_PROGRESS=false NODE_OPTIONS="--max_old_space_size=4096"
 RUN cd /root/docs/ \
@@ -7,6 +12,13 @@ RUN cd /root/docs/ \
     && apk add --no-cache git bash make g++ perl automake autoconf \
     && chmod +x import.pl \
     && yarn add docusaurus \
+    && crowdin download \
+    && cp -R docs/threatmapper/img zh-CN/threatmapper/img \
+    && cp -R docs/threatmapper/img zh-TW/threatmapper/img \
+    && mkdir -p i18n/zh-CN/docusaurus-plugin-content-docs/current/ \
+    && mkdir -p i18n/zh-TW/docusaurus-plugin-content-docs/current/ \
+    && mv zh-CN/threatmapper i18n/zh-CN/docusaurus-plugin-content-docs/current/threatmapper \
+    && mv zh-TW/threatmapper i18n/zh-TW/docusaurus-plugin-content-docs/current/threatmapper \
     && make \
     && make build
 
