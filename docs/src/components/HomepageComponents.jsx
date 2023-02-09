@@ -10,6 +10,7 @@ import More_svg from "../../static/img/more.svg";
 import Slack_svg from '../../static/img/social/slack.svg';
 import GitHub_svg from '../../static/img/social/github.svg';
 import LinkedIn_svg from '../../static/img/social/linkedin.svg';
+import Discord_svg from '../../static/img/social/discord-mark-blue.svg';
 import Twitter_svg from '../../static/img/social/twitter.svg';
 import G2_svg from '../../static/img/social/g2.svg';
 
@@ -118,6 +119,9 @@ export function SocialCard({}) {
       </Link>
       <Link to="https://www.linkedin.com/company/deepfence-inc">
         <LinkedIn_svg/>
+      </Link>
+      <Link to="https://discord.gg/Nf9BxeBPQN">
+        <Discord_svg/>
       </Link>
       <Link to="https://www.g2.com/products/threatmapper">
         <G2_svg/>

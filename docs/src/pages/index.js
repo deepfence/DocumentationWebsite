@@ -61,7 +61,9 @@ function HeroBanner() {
         <h1>
           Deepfence Community
         </h1>
-
+        <Section title="Featured as one of the fastest-growing open-source startups" HeadingTag="h3">
+          <RunaCapitalBadge/>
+        </Section>
         <Section title="Open Source is at the core of what we do, trusted by 1,000's of community users."
                  HeadingTag="h3">
           <Card
@@ -76,11 +78,6 @@ function HeroBanner() {
             title={getStars(githubData)}
             description="Across multiple repos, Deepfence projects are amongst the fastest adopted security solutions for cloud-native apps."
           />
-        </Section>
-      </div>
-      <div className={styles.heroInner}>
-        <Section title="Featured as one of the fastest-growing open-source startups" HeadingTag="h3">
-          <RunaCapitalBadge/>
         </Section>
       </div>
     </div>
