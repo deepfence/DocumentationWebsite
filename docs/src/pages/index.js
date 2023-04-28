@@ -36,7 +36,7 @@ function HeroBanner() {
        We try to route all github api calls through https://community.deepfence.io/gh-proxy ; see also the patch to
        github-buttons. The gh-proxy will cache GH API requests so as to reduce the load on github and reduce the 
        likelihood of exceeding their rate limits and getting a 403 response */
-    const repos = ['ThreatMapper', 'SecretScanner', 'YaraHunter', 'PacketStreamer', 'FlowMeter', 'community', 'package-scanner', 'CI-CD-Integrations', 'secretscanner-docker-extension', 'yarahunter-docker-extension'];
+    const repos = ['ThreatMapper', 'SecretScanner', 'YaraHunter', 'PacketStreamer', 'FlowMeter', "ebpfguard", 'community', 'package-scanner', 'CI-CD-Integrations', 'secretscanner-docker-extension', 'yarahunter-docker-extension'];
     if (Array.isArray(data)) {
       var stars = data.reduce((acc, curr) => {
         return repos.includes(curr.name) ? acc + curr.stargazers_count : acc;
@@ -133,6 +133,13 @@ function OpenSourceProducts() {
           icon="https://aya-rs.dev/assets/images/crabby.svg"
           gh="aya-rs/aya"
           docs="https://aya-rs.dev/book"
+        />
+        <ProductCard
+          title="Ebpfguard"
+          description="Ebpfguard is an Aya based library for seamless utilization of LSM BPF hooks"
+          // icon="/img/products/ebpfguard.svg"
+          gh="deepfence/ebpfguard"
+          docs="/docs/ebpfguard"
         />
       </Section>
     </div>

@@ -1,6 +1,6 @@
 // Sidebars are copied from the individual docs sites into ./sidebars, loaded and merged
 
-const products = [ 'threatmapper', 'secretscanner', 'yarahunter', 'packetstreamer', 'flowmeter'];
+const products = [ 'threatmapper', 'secretscanner', 'yarahunter', 'packetstreamer', 'flowmeter', 'ebpfguard' ];
 
 var sidebars = { 
   index: [

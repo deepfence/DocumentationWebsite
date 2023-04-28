@@ -32,7 +32,7 @@ docs:
 	./import.pl packetstreamer --from ../product-docs/PacketStreamer/docs/docs --to docs
 	./import.pl flowmeter      --from ../product-docs/FlowMeter/docs/docs --to docs
 	./import.pl yarahunter     --from ../product-docs/YaraHunter/docs/docs --to docs
-
+	./import.pl ebpfguard      --from ../product-docs/ebpfguard/docs/docs --to docs
 
 sidebars: 
 	@echo Copying sidebars to ./sidebars
@@ -41,6 +41,7 @@ sidebars:
 	cp ../product-docs/PacketStreamer/docs/sidebars.js     sidebars/packetstreamer.js
 	cp ../product-docs/FlowMeter/docs/sidebars.js          sidebars/flowmeter.js
 	cp ../product-docs/YaraHunter/docs/sidebars.js         sidebars/yarahunter.js
+	cp ../product-docs/ebpfguard/docs/sidebars.js          sidebars/ebpfguard.js
 
 extras:
 	@echo Copying additional resources
@@ -53,5 +54,5 @@ pull:
 
 clean:
 	-@rm sidebars/*.js
-	-@rm -rf docs/threatmapper docs/threatstryker docs/secretscanner docs/packetstreamer docs/flowmeter docs/yarahunter 
+	-@rm -rf docs/threatmapper docs/threatstryker docs/secretscanner docs/packetstreamer docs/flowmeter docs/yarahunter docs/ebpfguard
 	-@rm -rf build

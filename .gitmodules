@@ -22,3 +22,7 @@
         path = product-docs/YaraHunter
         url = https://github.com/deepfence/YaraHunter
         branch = main
+[submodule "product-docs/ebpfguard"]
+        path = product-docs/ebpfguard
+        url = https://github.com/deepfence/ebpfguard
+        branch = main
