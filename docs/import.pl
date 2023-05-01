@@ -15,6 +15,7 @@ my %image = (
   packetstreamer => "/img/social/packetstreamer.jpg",
   flowmeter => "/img/social/flowmeter.jpg",
   yarahunter => "/img/social/yarahunter.jpg"
+  # TODO(tjonak): ebpfguard image
 );
 
 my %keywords = (
@@ -23,7 +24,8 @@ my %keywords = (
   secretscanner => "[secret, secret scanning, token, key, password, container, image]",
   packetstreamer => "[tcpdump, distributed, remote, pcap, packet]",
   flowmeter => "[pcap, packet, ML, machine learning]",
-  yarahunter => "[yara, scan, container, image, filesystem, malware]"
+  yarahunter => "[yara, scan, container, image, filesystem, malware]",
+  ebpfguard => "[eBPF,LSM,rust]"
 );
 
 

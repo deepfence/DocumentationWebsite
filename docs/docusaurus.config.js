@@ -36,7 +36,8 @@ const config = {
               threatstryker:  'https://github.com/deepfence/ThreatStryker-docs',
               packetstreamer: 'https://github.com/deepfence/PacketStreamer',
               flowmeter:      'https://github.com/deepfence/FlowMeter',
-              yarahunter:     'https://github.com/deepfence/YaraHunter'
+              yarahunter:     'https://github.com/deepfence/YaraHunter',
+              ebpfguard:      'https://github.com/deepfence/ebpfguard'
             };
             const repoMaster = {
               threatmapper:   'https://github.com/deepfence/ThreatMapper',
@@ -78,8 +79,8 @@ const config = {
       /* Note that markdown documents outside of the docs tree are not processed for frontmatter metadata 
          Additionally, metadata is only applied in full client builds of the site */
       metadata: [
-        { name: 'keywords', content: 'deepfence,documentation,howto,threatmapper,threatstryker,secretscanner,packetstreamer,flowmeter,yarahunter,security,secops,devsecops,appsec' },
-        { property: 'og:keywords', content: 'deepfence,documentation,howto,threatmapper,threatstryker,secretscanner,packetstreamer,flowmeter,yarahunter,security,secops,devsecops,appsec' },
+        { name: 'keywords', content: 'deepfence,documentation,howto,threatmapper,threatstryker,secretscanner,packetstreamer,flowmeter,yarahunter,ebpfguard,security,secops,devsecops,appsec' },
+        { property: 'og:keywords', content: 'deepfence,documentation,howto,threatmapper,threatstryker,secretscanner,packetstreamer,flowmeter,yarahunter,ebpfguard,security,secops,devsecops,appsec' },
         { name: 'image', content: '/img/social/deepfence.jpg' },
         { property: 'og:image', content: '/img/social/deepfence.jpg' }
       ],
@@ -131,6 +132,10 @@ const config = {
               {
                 type: 'html',
                 value: '<a class="dropdown__link" href="/docs/packetstreamer">PacketStreamer</a>',
+              },
+              {
+                type: 'html',
+                value: '<a class="dropdown__link" href="/docs/ebpfguard">Ebpfguard</a>',
               },
               {
                 type: 'html',
@@ -194,6 +199,10 @@ const config = {
                 label: 'FlowMeter',
                 href: 'https://github.com/deepfence/FlowMeter',
               },
+              {
+                label: 'Ebpfguard',
+                href: 'https://github.com/deepfence/ebpfguard',
+              },
             ],
           },
           {
@@ -212,7 +221,10 @@ const config = {
                 html: '<a class="footer__link-item" href="/docs/packetstreamer">PacketStreamer</a>',
               },
               {
-                html: '<a class="footer__link-item" href="/docs/flowmeter">PacketStreamer</a>',
+                html: '<a class="footer__link-item" href="/docs/flowmeter">FlowMeter</a>',
+              },
+              {
+                html: '<a class="footer__link-item" href="/docs/ebpfguard">Ebpfguard</a>',
               },
             ],
           },
