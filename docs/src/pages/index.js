@@ -93,7 +93,7 @@ function OpenSourceProducts() {
           description="Hunt for threats in production platforms, and rank them based on their risk-of-exploit."
           icon="/img/products/threatmapper.svg"
           gh="deepfence/ThreatMapper"
-          docs="/docs/threatmapper"
+          docs="/threatmapper/docs"
           readmore="https://deepfence.io/threatmapper"
         />
         <div className="homepage-card card-content" id="video">

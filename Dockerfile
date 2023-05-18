@@ -1,4 +1,4 @@
-FROM crowdin/cli:3.9.1 AS build
+FROM crowdin/cli:3.11.1 AS build
 
 ARG CROWDIN_PERSONAL_TOKEN
 RUN set -eux \
@@ -16,15 +16,17 @@ RUN cd /root/docs/ \
     && make \
     && sed -i "s/CROWDIN_PERSONAL_TOKEN/${CROWDIN_PERSONAL_TOKEN}/g" crowdin.yml \
     && crowdin download \
-    && cp -R docs/threatmapper/img zh-CN/threatmapper/img \
-    && cp -R docs/threatmapper/img zh-TW/threatmapper/img \
-    && mkdir -p i18n/zh-CN/docusaurus-plugin-content-docs/current/ \
-    && mkdir -p i18n/zh-TW/docusaurus-plugin-content-docs/current/ \
-    && mv zh-CN/threatmapper i18n/zh-CN/docusaurus-plugin-content-docs/current/threatmapper \
-    && mv zh-TW/threatmapper i18n/zh-TW/docusaurus-plugin-content-docs/current/threatmapper \
+    && cd /root/product-docs/ThreatMapper/docs \
+    && cp -R docs/img zh-CN/threatmapper/img \
+    && cp -R docs/img zh-TW/threatmapper/img \
+    && mkdir -p i18n/zh-CN/docusaurus-plugin-content-docs/ \
+    && mkdir -p i18n/zh-TW/docusaurus-plugin-content-docs/ \
+    && mv zh-CN/threatmapper/ i18n/zh-CN/docusaurus-plugin-content-docs/current/ \
+    && mv zh-TW/threatmapper/ i18n/zh-TW/docusaurus-plugin-content-docs/current/ \
+    && cd /root/docs/ \
     && make build
 
-FROM nginx:1.23-alpine
+FROM nginx:1.24-alpine
 MAINTAINER Deepfence Inc
 LABEL deepfence.role=system
 

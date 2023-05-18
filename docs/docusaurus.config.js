@@ -20,7 +20,7 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'zh-CN', 'zh-TW'],
+    locales: ['en'],
   },
 
   presets: [
@@ -119,7 +119,7 @@ const config = {
               },
               {
                 type: 'html',
-                value: '<a class="dropdown__link" href="/docs/threatmapper">ThreatMapper</a>',
+                value: '<a class="dropdown__link" href="/threatmapper/docs">ThreatMapper</a>',
               },
               {
                 type: 'html',
@@ -135,7 +135,7 @@ const config = {
               },
               {
                 type: 'html',
-                value: '<a class="dropdown__link" href="/docs/ebpfguard">Ebpfguard</a>',
+                value: '<a class="dropdown__link" href="/docs/ebpfguard">eBPFGuard</a>',
               },
               {
                 type: 'html',
@@ -196,12 +196,12 @@ const config = {
                 href: 'https://github.com/deepfence/PacketStreamer',
               },
               {
-                label: 'FlowMeter',
-                href: 'https://github.com/deepfence/FlowMeter',
+                label: 'eBPFGuard',
+                href: 'https://github.com/deepfence/ebpfguard',
               },
               {
-                label: 'Ebpfguard',
-                href: 'https://github.com/deepfence/ebpfguard',
+                label: 'FlowMeter',
+                href: 'https://github.com/deepfence/FlowMeter',
               },
             ],
           },
@@ -209,7 +209,7 @@ const config = {
             title: 'Docs',
             items: [
               {
-                html: '<a class="footer__link-item" href="/docs/threatmapper">ThreatMapper</a>',
+                html: '<a class="footer__link-item" href="/threatmapper/docs">ThreatMapper</a>',
               },
               {
                 html: '<a class="footer__link-item" href="/docs/secretscanner">SecretScanner</a>',
@@ -221,10 +221,10 @@ const config = {
                 html: '<a class="footer__link-item" href="/docs/packetstreamer">PacketStreamer</a>',
               },
               {
-                html: '<a class="footer__link-item" href="/docs/flowmeter">FlowMeter</a>',
+                html: '<a class="footer__link-item" href="/docs/ebpfguard">eBPFGuard</a>',
               },
               {
-                html: '<a class="footer__link-item" href="/docs/ebpfguard">Ebpfguard</a>',
+                html: '<a class="footer__link-item" href="/docs/flowmeter">FlowMeter</a>',
               },
             ],
           },

@@ -1,10 +1,10 @@
 project_id: '554061'
 api_token: 'CROWDIN_PERSONAL_TOKEN'
-base_path: '/root/docs'
+base_path: '/root/product-docs/ThreatMapper/docs'
 preserve_hierarchy: true
 files:
   # Docs Markdown files
-  - source: /docs/threatmapper/**/*
+  - source: /docs/**/*
     dest: /threatmapper/**/%original_file_name%
     #translation: /i18n/%locale%/docusaurus-plugin-content-docs/current/threatmapper/**/%original_file_name%
     translation: /%locale%/threatmapper/**/%original_file_name%
