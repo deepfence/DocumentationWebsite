@@ -31,12 +31,12 @@ function HeroBanner() {
   const [dockerhubData, setDockerHubData] = useState([]);
 
   function getStars(data) {
-    /* If this GET has failed, check browser console messages and community.deepfence.io/gh-proxy configuration.
+    /* If this GET has failed, check browser console messages and community.deepfence.io/gh-cache/ configuration.
     
-       We try to route all github api calls through https://community.deepfence.io/gh-proxy ; see also the patch to
-       github-buttons. The gh-proxy will cache GH API requests so as to reduce the load on github and reduce the 
+       We try to route all GitHub api calls through https://community.deepfence.io/gh-cache/ ; see also the patch to
+       github-buttons. The gh-cache will cache GitHub API requests to reduce the load on GitHub and reduce the
        likelihood of exceeding their rate limits and getting a 403 response */
-    const repos = ['ThreatMapper', 'SecretScanner', 'YaraHunter', 'PacketStreamer', 'FlowMeter', "ebpfguard", 'community', 'package-scanner', 'CI-CD-Integrations', 'secretscanner-docker-extension', 'yarahunter-docker-extension'];
+    const repos = ['ThreatMapper', 'SecretScanner', 'YaraHunter', 'PacketStreamer', 'FlowMeter', 'ebpfguard', 'community', 'package-scanner', 'CI-CD-Integrations', 'secretscanner-docker-extension', 'yarahunter-docker-extension'];
     if (Array.isArray(data)) {
       var stars = data.reduce((acc, curr) => {
         return repos.includes(curr.name) ? acc + curr.stargazers_count : acc;
