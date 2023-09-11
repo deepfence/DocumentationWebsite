@@ -14,16 +14,16 @@ RUN cd /root/docs/ \
     && chmod +x import.pl \
     && yarn add docusaurus \
     && make \
-    && sed -i "s/CROWDIN_PERSONAL_TOKEN/${CROWDIN_PERSONAL_TOKEN}/g" crowdin.yml \
-    && crowdin download \
-    && cd /root/product-docs/ThreatMapper/docs \
-    && cp -R docs/img zh-CN/threatmapper/img \
-    && cp -R docs/img zh-TW/threatmapper/img \
-    && mkdir -p i18n/zh-CN/docusaurus-plugin-content-docs/ \
-    && mkdir -p i18n/zh-TW/docusaurus-plugin-content-docs/ \
-    && mv zh-CN/threatmapper/ i18n/zh-CN/docusaurus-plugin-content-docs/current/ \
-    && mv zh-TW/threatmapper/ i18n/zh-TW/docusaurus-plugin-content-docs/current/ \
-    && cd /root/docs/ \
+#    && sed -i "s/CROWDIN_PERSONAL_TOKEN/${CROWDIN_PERSONAL_TOKEN}/g" crowdin.yml \
+#    && crowdin download \
+#    && cd /root/product-docs/ThreatMapper/docs \
+#    && cp -R docs/img zh-CN/threatmapper/img \
+#    && cp -R docs/img zh-TW/threatmapper/img \
+#    && mkdir -p i18n/zh-CN/docusaurus-plugin-content-docs/ \
+#    && mkdir -p i18n/zh-TW/docusaurus-plugin-content-docs/ \
+#    && mv zh-CN/threatmapper/ i18n/zh-CN/docusaurus-plugin-content-docs/current/ \
+#    && mv zh-TW/threatmapper/ i18n/zh-TW/docusaurus-plugin-content-docs/current/ \
+#    && cd /root/docs/ \
     && make build
 
 FROM nginx:1.24-alpine
