@@ -15,11 +15,21 @@ all: pull docs sidebars extras
 
 threatstryker-build:
 	@echo Building ThreatStryker-docs
-	(cd ../product-docs/ThreatStryker-docs/docs && yarn && yarn build)
+	cd ../product-docs/ThreatStryker-docs/docs \
+	&& find . -type f \( -name '*.txt' -o -name '*.yml' \) -exec sed -i 's/THREATSTRYKER_VERSION/${THREATSTRYKER_VERSION}/g' {} + \
+	&& find . -type f -name '*.md' -exec sed -i 's/TS_CONSOLE_HELM_CHART_VERSION/${TS_CONSOLE_HELM_CHART_VERSION}/g' {} + \
+	&& find . -type f -name '*.md' -exec sed -i 's/TS_ROUTER_HELM_CHART_VERSION/${TS_ROUTER_HELM_CHART_VERSION}/g' {} + \
+	&& find . -type f -name '*.md' -exec sed -i 's/TS_AGENT_HELM_CHART_VERSION/${TS_AGENT_HELM_CHART_VERSION}/g' {} + \
+	&& yarn && yarn build
 
 threatmapper-build:
 	@echo Building ThreatMapper
-	(cd ../product-docs/ThreatMapper/docs && yarn && yarn build)
+	cd ../product-docs/ThreatMapper/docs \
+    && find . -type f -name '*.md' -exec sed -i 's/THREATMAPPER_VERSION/${THREATMAPPER_VERSION}/g' {} + \
+    && find . -type f -name '*.md' -exec sed -i 's/TM_CONSOLE_HELM_CHART_VERSION/${TM_CONSOLE_HELM_CHART_VERSION}/g' {} + \
+    && find . -type f -name '*.md' -exec sed -i 's/TM_ROUTER_HELM_CHART_VERSION/${TM_ROUTER_HELM_CHART_VERSION}/g' {} + \
+    && find . -type f -name '*.md' -exec sed -i 's/TM_AGENT_HELM_CHART_VERSION/${TM_AGENT_HELM_CHART_VERSION}/g' {} + \
+    && yarn && yarn build
 
 build: threatmapper-build threatstryker-build
 	@echo Building Documentation Website
