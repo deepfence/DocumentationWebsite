@@ -8,9 +8,12 @@ export TS_ROUTER_HELM_CHART_VERSION?="2.1.1"
 export TS_AGENT_HELM_CHART_VERSION?="2.1.2"
 export DF_IMG_TAG?="2.1.1"
 
-.PHONY: build push push-latest
+.PHONY: bootstrap build push push-latest
 
-all: build
+all: bootstrap build
+
+bootstrap:
+	./bootstrap.sh
 
 build:
 	docker build \
