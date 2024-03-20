@@ -16,7 +16,7 @@ all: pull docs sidebars extras
 threatstryker-build:
 	@echo Building ThreatStryker-docs
 	cd ../product-docs/ThreatStryker-docs/docs \
-	&& find . -type f \( -name '*.txt' -o -name '*.yml' \) -exec sed -i 's/THREATSTRYKER_VERSION/${THREATSTRYKER_VERSION}/g' {} + \
+	&& find . -type f \( -name '*.txt' -o -name '*.yml' -o -name '*.md' \) -exec sed -i 's/THREATSTRYKER_VERSION/${THREATSTRYKER_VERSION}/g' {} + \
 	&& find . -type f -name '*.md' -exec sed -i 's/TS_CONSOLE_HELM_CHART_VERSION/${TS_CONSOLE_HELM_CHART_VERSION}/g' {} + \
 	&& find . -type f -name '*.md' -exec sed -i 's/TS_ROUTER_HELM_CHART_VERSION/${TS_ROUTER_HELM_CHART_VERSION}/g' {} + \
 	&& find . -type f -name '*.md' -exec sed -i 's/TS_AGENT_HELM_CHART_VERSION/${TS_AGENT_HELM_CHART_VERSION}/g' {} + \
