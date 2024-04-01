@@ -58,7 +58,7 @@ sidebars:
 
 extras:
 	@echo Copying additional resources
-	cp ../product-docs/ThreatMapper/docs/static/img/threatmapper-intro.mp4 static/img
+	#cp ../product-docs/ThreatMapper/docs/static/img/threatmapper-intro.mp4 static/img
 
 pull:
 	@echo Updating product repos

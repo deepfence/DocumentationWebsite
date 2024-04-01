@@ -10,7 +10,7 @@ import {
   SocialCard,
   SwagCard
 } from '../components/HomepageComponents';
-import ReactPlayer from 'react-player';
+// import ReactPlayer from 'react-player';
 
 
 function HeroBanner() {
@@ -96,9 +96,9 @@ function OpenSourceProducts() {
           docs="/threatmapper/docs"
           readmore="https://deepfence.io/threatmapper"
         />
-        <div className="homepage-card card-content" id="video">
-          <ReactPlayer controls url='/img/threatmapper-intro.mp4' width="100%" height="100%"/>
-        </div>
+        {/*<div className="homepage-card card-content" id="video">*/}
+        {/*  <ReactPlayer controls url='/img/threatmapper-intro.mp4' width="100%" height="100%"/>*/}
+        {/*</div>*/}
         <ProductCard
           title="Deepfence SecretScanner"
           description="Find unprotected secrets, tokens and authentication keys in containers and file systems."
