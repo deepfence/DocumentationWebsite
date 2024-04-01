@@ -26,12 +26,17 @@ build:
 		--build-arg TS_ROUTER_HELM_CHART_VERSION=$(TS_ROUTER_HELM_CHART_VERSION) \
 		--build-arg TS_AGENT_HELM_CHART_VERSION=$(TS_AGENT_HELM_CHART_VERSION) \
 		-f Dockerfile \
-		-t deepfenceio/deepfence_docs:$(DF_IMG_TAG) .
+		-t quay.io/deepfenceio/deepfence_docs:$(DF_IMG_TAG) .
 
 push:
-	docker push deepfenceio/deepfence_docs:$(DF_IMG_TAG)
+	docker push quay.io/deepfenceio/deepfence_docs:$(DF_IMG_TAG)
 
 push-latest:
-	docker tag deepfenceio/deepfence_docs:$(DF_IMG_TAG) deepfenceio/deepfence_docs:latest
-	docker push deepfenceio/deepfence_docs:latest
-	docker image rm deepfenceio/deepfence_docs:latest
+	docker tag quay.io/deepfenceio/deepfence_docs:$(DF_IMG_TAG) deepfenceio/deepfence_docs:latest
+	docker push quay.io/deepfenceio/deepfence_docs:latest
+	docker image rm quay.io/deepfenceio/deepfence_docs:latest
+
+push-release:
+	docker tag quay.io/deepfenceio/deepfence_docs:$(DF_IMG_TAG) deepfenceio/deepfence_docs:$(THREATMAPPER_VERSION)
+	docker push quay.io/deepfenceio/deepfence_docs:$(THREATMAPPER_VERSION)
+	docker image rm quay.io/deepfenceio/deepfence_docs:$(THREATMAPPER_VERSION)

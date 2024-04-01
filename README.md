@@ -78,8 +78,8 @@ yarn run serve --build --port 8000 --host 0.0.0.0
 
 ```bash
 ./bootstrap.sh
-docker build -f Dockerfile -t deepfenceio/deepfence_docs:latest .
-docker run -dit --restart=always --name=deepfence-docs -e GITHUB_USER=aaa -e GITHUB_ACCESS_TOKEN=aaa -p 80:80 deepfenceio/deepfence_docs
+make
+docker run -dit --restart=always --name=deepfence-docs -e GITHUB_USER=aaa -e GITHUB_ACCESS_TOKEN=aaa -p 80:80 quay.io/deepfenceio/deepfence_docs:latest
 ```
 
 ## Hosting the site
