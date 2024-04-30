@@ -32,11 +32,11 @@ push:
 	docker push quay.io/deepfenceio/deepfence_docs:$(DF_IMG_TAG)
 
 push-latest:
-	docker tag quay.io/deepfenceio/deepfence_docs:$(DF_IMG_TAG) deepfenceio/deepfence_docs:latest
+	docker tag quay.io/deepfenceio/deepfence_docs:$(DF_IMG_TAG) quay.io/deepfenceio/deepfence_docs:latest
 	docker push quay.io/deepfenceio/deepfence_docs:latest
 	docker image rm quay.io/deepfenceio/deepfence_docs:latest
 
 push-release:
-	docker tag quay.io/deepfenceio/deepfence_docs:$(DF_IMG_TAG) deepfenceio/deepfence_docs:$(THREATMAPPER_VERSION)
+	docker tag quay.io/deepfenceio/deepfence_docs:$(DF_IMG_TAG) quay.io/deepfenceio/deepfence_docs:$(THREATMAPPER_VERSION)
 	docker push quay.io/deepfenceio/deepfence_docs:$(THREATMAPPER_VERSION)
 	docker image rm quay.io/deepfenceio/deepfence_docs:$(THREATMAPPER_VERSION)
