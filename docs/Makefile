@@ -20,6 +20,7 @@ threatstryker-build:
 	&& find . -type f -name '*.md' -exec sed -i 's/TS_CONSOLE_HELM_CHART_VERSION/${TS_CONSOLE_HELM_CHART_VERSION}/g' {} + \
 	&& find . -type f -name '*.md' -exec sed -i 's/TS_ROUTER_HELM_CHART_VERSION/${TS_ROUTER_HELM_CHART_VERSION}/g' {} + \
 	&& find . -type f -name '*.md' -exec sed -i 's/TS_AGENT_HELM_CHART_VERSION/${TS_AGENT_HELM_CHART_VERSION}/g' {} + \
+	&& find . -type f -name '*.md' -exec sed -i 's/CLOUD_SCANNER_HELM_CHART_VERSION/${CLOUD_SCANNER_HELM_CHART_VERSION}/g' {} + \
 	&& yarn && yarn build
 
 threatmapper-build:
@@ -29,6 +30,7 @@ threatmapper-build:
     && find . -type f -name '*.md' -exec sed -i 's/TM_CONSOLE_HELM_CHART_VERSION/${TM_CONSOLE_HELM_CHART_VERSION}/g' {} + \
     && find . -type f -name '*.md' -exec sed -i 's/TM_ROUTER_HELM_CHART_VERSION/${TM_ROUTER_HELM_CHART_VERSION}/g' {} + \
     && find . -type f -name '*.md' -exec sed -i 's/TM_AGENT_HELM_CHART_VERSION/${TM_AGENT_HELM_CHART_VERSION}/g' {} + \
+    && find . -type f -name '*.md' -exec sed -i 's/CLOUD_SCANNER_HELM_CHART_VERSION/${CLOUD_SCANNER_HELM_CHART_VERSION}/g' {} + \
     && yarn && yarn build
 
 build: threatmapper-build threatstryker-build
