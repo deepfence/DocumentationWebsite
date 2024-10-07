@@ -1,11 +1,11 @@
 [submodule "product-docs/ThreatMapper"]
         path = product-docs/ThreatMapper
         url = https://github.com/deepfence/ThreatMapper
-        branch = release-2.3
+        branch = release-2.4
 [submodule "product-docs/SecretScanner"]
         path = product-docs/SecretScanner
         url = https://github.com/deepfence/SecretScanner
-        branch = release-2.3
+        branch = release-2.4
 [submodule "product-docs/PacketStreamer"]
         path = product-docs/PacketStreamer
         url = https://github.com/deepfence/PacketStreamer
@@ -17,11 +17,11 @@
 [submodule "product-docs/ThreatStryker-docs"]
         path = product-docs/ThreatStryker-docs
         url = https://github.com/deepfence/ThreatStryker-docs
-        branch = release-2.3
+        branch = release-2.4
 [submodule "product-docs/YaraHunter"]
         path = product-docs/YaraHunter
         url = https://github.com/deepfence/YaraHunter
-        branch = release-2.3
+        branch = release-2.4
 [submodule "product-docs/ebpfguard"]
         path = product-docs/ebpfguard
         url = https://github.com/deepfence/ebpfguard
