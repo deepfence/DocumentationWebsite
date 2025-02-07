@@ -10,6 +10,7 @@ import {
   SocialCard,
   SwagCard
 } from '../components/HomepageComponents';
+
 // import ReactPlayer from 'react-player';
 
 
@@ -18,6 +19,9 @@ function HeroBanner() {
     fetch(`https://community.deepfence.io/gh-cache/orgs/deepfence/repos`)
       .then((response) => response.json())
       .then((data) => setGitHubData(data));
+    fetch(`https://community.deepfence.io/gh-cache/orgs/aya-rs/repos`)
+      .then((response) => response.json())
+      .then((data) => setAyaGitHubData(data));
     fetch(`https://community.deepfence.io/dh-cache/v2/repositories/deepfenceio/deepfence_agent_ce`)
       .then((response) => response.json())
       .then((data) => setDockerHubData(data));
@@ -28,21 +32,34 @@ function HeroBanner() {
   }, []);
 
   const [githubData, setGitHubData] = useState([]);
+  const [ayaGithubData, setAyaGitHubData] = useState([]);
   const [dockerhubData, setDockerHubData] = useState([]);
 
-  function getStars(data) {
+  function getStars(deepfenceData, ayaGithubData) {
     /* If this GET has failed, check browser console messages and community.deepfence.io/gh-cache/ configuration.
     
        We try to route all GitHub api calls through https://community.deepfence.io/gh-cache/ ; see also the patch to
        github-buttons. The gh-cache will cache GitHub API requests to reduce the load on GitHub and reduce the
        likelihood of exceeding their rate limits and getting a 403 response */
-    const repos = ['ThreatMapper', 'SecretScanner', 'YaraHunter', 'PacketStreamer', 'FlowMeter', 'ebpfguard', 'community', 'package-scanner', 'CI-CD-Integrations', 'secretscanner-docker-extension', 'yarahunter-docker-extension'];
-    if (Array.isArray(data)) {
-      var stars = data.reduce((acc, curr) => {
+
+    let stars = 0
+    const repos = ['ThreatMapper', 'SecretScanner', 'YaraHunter', 'PacketStreamer', 'FlowMeter', 'ebpfguard'];
+    if (Array.isArray(deepfenceData)) {
+      stars = deepfenceData.reduce((acc, curr) => {
         return repos.includes(curr.name) ? acc + curr.stargazers_count : acc;
       }, 0);
-      if (stars > 0) return `${stars.toLocaleString()} GitHub Stars`;
     }
+
+    let ayaStars = 0
+    const ayaRepos = ['aya'];
+    if (Array.isArray(ayaGithubData)) {
+      ayaStars = ayaGithubData.reduce((acc, curr) => {
+        return ayaRepos.includes(curr.name) ? acc + curr.stargazers_count : acc;
+      }, 0);
+    }
+
+    if (stars + ayaStars > 0) return `${(stars + ayaStars).toLocaleString()} GitHub Stars`;
+
     return "Be Part of the Wave";
   }
 
@@ -75,7 +92,7 @@ function HeroBanner() {
             description="Deepfence ThreatMapper finds threats hidden in thousands of production platforms - Cloud, Serverless, Containers."
           />
           <Card
-            title={getStars(githubData)}
+            title={getStars(githubData, ayaGithubData)}
             description="Across multiple repos, Deepfence projects are amongst the fastest adopted security solutions for cloud-native apps."
           />
         </Section>
