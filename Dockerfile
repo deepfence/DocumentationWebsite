@@ -43,6 +43,7 @@ COPY --from=build /root/docs/build /var/www/html
 
 ADD community.deepfence.io.conf /etc/nginx/conf.d/community.deepfence.io.conf.template
 ADD docs.deepfence.io.conf /etc/nginx/conf.d/docs.deepfence.io.conf.template
+ADD threatmapper.org.conf /etc/nginx/conf.d/threatmapper.org.conf.template
 ADD docker-entrypoint.sh /docker-entrypoint.d/docker-entrypoint.sh
 RUN apk update \
     && rm /etc/nginx/conf.d/default.conf  \
