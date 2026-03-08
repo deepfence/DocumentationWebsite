@@ -15,72 +15,46 @@ The website is built using [Docusaurus 2](https://docusaurus.io/).
 
 Clone the repo, then:
 
-### Initialize the components:
-
-Import the product docs from each project as a submodule.  Do this once:
-
-```bash
-git submodule init
-```
-
-Initialize the dependencies.  Do this once:
-
-```bash
-cd docs
-yarn
-```
-
-### Import the docs content
-
-Run `make` to import the docs from the submodule projects.  Do this any time the docs are updated.
-
-```bash
-cd docs
-make
-```
-
-This operation will build the full source for the website:
-
-1. Refresh the remote projects (`git submodule update --remote`)
-1. Copy the docs content from each project (`docs/docs/projectname`) into the `docs/docs/projectname` location for this website, making some SEO customizations to the markdown frontmatter
-1. Copy the sidebar navigation from each project
-
-
-### Run the website
-
-Run `make run` to preview the website.
-
-```bash
-make run
-```
-
-This command (running [`docusaurus start`](https://docusaurus.io/docs/cli#docusaurus-start-sitedir)) builds a site preview, starts a local development server and opens up a browser window.  Most changes are reflected live without having to restart the server.  Use `--port` to select a different port to the default (:3000).
-
 ### Build the content for publication
 
-Run `make build` to create the static, production-ready site.
+Run `make` (or `make build`) from the repository root to generate a static, production-ready site.  
+This runs inside a disposable Docker container and does not require `yarn` on the host.
 
 ```bash
-make build
+make
 ```
 
 A [full build](https://docusaurus.io/docs/cli#docusaurus-build-sitedir) goes through additional steps of packing, minifying and checking the build. This process may identify problems (e.g. broken links) that the quick preview build fails to detect.  It also enables the production-only features, such as google analytics and bigpicture beacons.
 
-The resulting static build is located in `build/`.
+The resulting static build is located in `docs/build/`.
 
-Alternatively, you can build-and-serve the site as follows:
+### Run the website (local tools)
+
+Run `make run-local` to preview the website using local dependencies.
 
 ```bash
+make run-local
+```
+
+This command (running [`docusaurus start`](https://docusaurus.io/docs/cli#docusaurus-start-sitedir)) builds a site preview, starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server. Use `--port` to select a different port to the default (:3000).
+
+Alternatively, you can build-and-serve directly from `docs/`:
+
+```bash
+cd docs
 yarn run serve --build --port 8000 --host 0.0.0.0
 ```
 
-## Docker image
+### Local build targets (optional)
+
+If you prefer native host tooling:
 
 ```bash
-./bootstrap.sh
-make
-docker run -dit --restart=always --name=deepfence-docs -e GITHUB_USER=aaa -e GITHUB_ACCESS_TOKEN=aaa -p 80:80 quay.io/deepfenceio/deepfence_docs:latest
+make sync-local
+make build-local
 ```
+
+`sync-local` refreshes submodules and imports docs/sidebars. `build-local` generates the static site in `docs/build/`.
 
 ## Hosting the site
 
@@ -129,9 +103,9 @@ The home page is located in `docs/src/pages/index.js`.  You can edit this page d
 
 ### Editing the product docs
 
-The product docs are sourced from the individual product repos, and are additionally decorated when they are imported (`make`) into the documentation website.  
+The product docs are sourced from the individual product repos, and are additionally decorated when they are imported (`make sync`) into the documentation website.  
 
-You can edit the product docs in their respective submodules (`/product-docs`) and run `make` to re-import them.  Changes in the submodule are independent of this repo, can be submitted to their respective repos in the usual way.
+You can edit the product docs in their respective submodules (`/product-docs`) and run `make sync` to re-import them. Changes in the submodule are independent of this repo, can be submitted to their respective repos in the usual way.
 
 For large changes to product docs (e.g. to prepare for a new release), it is better to develop these changes in the product's repo, test them locally, and then merge them to the product's `main` branch once complete.  You can then rebuild the documentation website.
 

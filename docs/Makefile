@@ -11,32 +11,31 @@
 
 .PHONY: docs sidebars build
 
-all: pull docs sidebars extras
+SED := $(shell command -v gsed >/dev/null 2>&1 && echo gsed || echo sed)
+SED_INPLACE := -i
 
-threatstryker-build:
-	@echo Building ThreatStryker-docs
-	cd ../product-docs/ThreatStryker-docs/docs \
-	&& find . -type f \( -name '*.txt' -o -name '*.yml' -o -name '*.md' \) -exec sed -i 's/THREATSTRYKER_VERSION/${THREATSTRYKER_VERSION}/g' {} + \
-	&& find . -type f -name '*.md' -exec sed -i 's/TS_CONSOLE_HELM_CHART_VERSION/${TS_CONSOLE_HELM_CHART_VERSION}/g' {} + \
-	&& find . -type f -name '*.md' -exec sed -i 's/TS_ROUTER_HELM_CHART_VERSION/${TS_ROUTER_HELM_CHART_VERSION}/g' {} + \
-	&& find . -type f -name '*.md' -exec sed -i 's/TS_AGENT_HELM_CHART_VERSION/${TS_AGENT_HELM_CHART_VERSION}/g' {} + \
-	&& find . -type f -name '*.md' -exec sed -i 's/CLOUD_SCANNER_HELM_CHART_VERSION/${CLOUD_SCANNER_HELM_CHART_VERSION}/g' {} + \
-	&& yarn && yarn build
+ifeq ($(shell uname),Darwin)
+ifneq ($(SED),gsed)
+SED_INPLACE := -i ''
+endif
+endif
+
+all: pull docs sidebars extras
 
 threatmapper-build:
 	@echo Building ThreatMapper
 	cd ../product-docs/ThreatMapper/docs \
-    && find . -type f -name '*.md' -exec sed -i 's/THREATMAPPER_VERSION/${THREATMAPPER_VERSION}/g' {} + \
-    && find . -type f -name '*.md' -exec sed -i 's/TM_CONSOLE_HELM_CHART_VERSION/${TM_CONSOLE_HELM_CHART_VERSION}/g' {} + \
-    && find . -type f -name '*.md' -exec sed -i 's/TM_ROUTER_HELM_CHART_VERSION/${TM_ROUTER_HELM_CHART_VERSION}/g' {} + \
-    && find . -type f -name '*.md' -exec sed -i 's/TM_AGENT_HELM_CHART_VERSION/${TM_AGENT_HELM_CHART_VERSION}/g' {} + \
-    && find . -type f -name '*.md' -exec sed -i 's/CLOUD_SCANNER_HELM_CHART_VERSION/${CLOUD_SCANNER_HELM_CHART_VERSION}/g' {} + \
+    && find . -type f -name '*.md' -exec $(SED) $(SED_INPLACE) 's/THREATMAPPER_VERSION/${THREATMAPPER_VERSION}/g' {} + \
+    && find . -type f -name '*.md' -exec $(SED) $(SED_INPLACE) 's/TM_CONSOLE_HELM_CHART_VERSION/${TM_CONSOLE_HELM_CHART_VERSION}/g' {} + \
+    && find . -type f -name '*.md' -exec $(SED) $(SED_INPLACE) 's/TM_ROUTER_HELM_CHART_VERSION/${TM_ROUTER_HELM_CHART_VERSION}/g' {} + \
+    && find . -type f -name '*.md' -exec $(SED) $(SED_INPLACE) 's/TM_AGENT_HELM_CHART_VERSION/${TM_AGENT_HELM_CHART_VERSION}/g' {} + \
+    && find . -type f -name '*.md' -exec $(SED) $(SED_INPLACE) 's/CLOUD_SCANNER_HELM_CHART_VERSION/${CLOUD_SCANNER_HELM_CHART_VERSION}/g' {} + \
     && yarn && yarn build
 
-build: threatmapper-build threatstryker-build
+build: threatmapper-build
 	@echo Building Documentation Website
+	yarn install
 	yarn build
-	mv ../product-docs/ThreatStryker-docs/docs/build build/threatstryker
 	mv ../product-docs/ThreatMapper/docs/build build/threatmapper
 
 run: build
@@ -69,5 +68,5 @@ pull:
 
 clean:
 	-@rm sidebars/*.js
-	-@rm -rf docs/threatmapper docs/threatstryker docs/secretscanner docs/packetstreamer docs/flowmeter docs/yarahunter docs/ebpfguard
+	-@rm -rf docs/threatmapper docs/secretscanner docs/packetstreamer docs/flowmeter docs/yarahunter docs/ebpfguard
 	-@rm -rf build

@@ -64,11 +64,6 @@ const config = {
             docId: '/docs/threatmapper/index',
             label: 'ThreatMapper Documentation',
           },
-          { 
-            to: 'https://deepfence.io/',
-            label: 'deepfence.io',
-            position: 'right',
-          },
           {
             href: 'https://github.com/deepfence',
             label: 'GitHub',

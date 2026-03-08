@@ -1,44 +1,53 @@
-export THREATMAPPER_VERSION?="2.5.7"
-export TM_CONSOLE_HELM_CHART_VERSION?="2.5.7"
-export TM_ROUTER_HELM_CHART_VERSION?="2.5.7"
-export TM_AGENT_HELM_CHART_VERSION?="2.5.7"
-export THREATSTRYKER_VERSION?="2.5.7"
-export TS_CONSOLE_HELM_CHART_VERSION?="2.5.7"
-export TS_ROUTER_HELM_CHART_VERSION?="2.5.7"
-export TS_AGENT_HELM_CHART_VERSION?="2.5.7"
-export CLOUD_SCANNER_HELM_CHART_VERSION?="2.5.7"
-export DF_IMG_TAG?="2.5.7"
+export THREATMAPPER_VERSION?=2.5.8
+export TM_CONSOLE_HELM_CHART_VERSION?=2.5.8
+export TM_ROUTER_HELM_CHART_VERSION?=2.5.8
+export TM_AGENT_HELM_CHART_VERSION?=2.5.8
+export CLOUD_SCANNER_HELM_CHART_VERSION?=2.5.8
+export DOCKER_IMAGE?=node:20-bookworm
+export DOCKER_YARN_VERSION?=1.22.22
+HOST_UID := $(shell id -u)
+HOST_GID := $(shell id -g)
 
-.PHONY: bootstrap build push push-latest
+.PHONY: all bootstrap sync sync-local build build-local build-docker run run-local clean
 
-all: bootstrap build
+all: build
 
 bootstrap:
 	./bootstrap.sh
 
-build:
-	docker build \
-		--build-arg THREATMAPPER_VERSION=$(THREATMAPPER_VERSION) \
-		--build-arg TM_CONSOLE_HELM_CHART_VERSION=$(TM_CONSOLE_HELM_CHART_VERSION) \
-		--build-arg TM_ROUTER_HELM_CHART_VERSION=$(TM_ROUTER_HELM_CHART_VERSION) \
-		--build-arg TM_AGENT_HELM_CHART_VERSION=$(TM_AGENT_HELM_CHART_VERSION) \
-		--build-arg THREATSTRYKER_VERSION=$(THREATSTRYKER_VERSION) \
-		--build-arg TS_CONSOLE_HELM_CHART_VERSION=$(TS_CONSOLE_HELM_CHART_VERSION) \
-		--build-arg TS_ROUTER_HELM_CHART_VERSION=$(TS_ROUTER_HELM_CHART_VERSION) \
-		--build-arg TS_AGENT_HELM_CHART_VERSION=$(TS_AGENT_HELM_CHART_VERSION) \
-		--build-arg CLOUD_SCANNER_HELM_CHART_VERSION=$(CLOUD_SCANNER_HELM_CHART_VERSION) \
-		-f Dockerfile \
-		-t quay.io/deepfenceio/deepfence_docs:$(DF_IMG_TAG) .
+sync: sync-local
 
-push:
-	docker push quay.io/deepfenceio/deepfence_docs:$(DF_IMG_TAG)
+sync-local: bootstrap
+	$(MAKE) -C docs docs sidebars extras
 
-push-latest:
-	docker tag quay.io/deepfenceio/deepfence_docs:$(DF_IMG_TAG) quay.io/deepfenceio/deepfence_docs:latest
-	docker push quay.io/deepfenceio/deepfence_docs:latest
-	docker image rm quay.io/deepfenceio/deepfence_docs:latest
+build: build-docker
 
-push-release:
-	docker tag quay.io/deepfenceio/deepfence_docs:$(DF_IMG_TAG) quay.io/deepfenceio/deepfence_docs:$(THREATSTRYKER_VERSION)
-	docker push quay.io/deepfenceio/deepfence_docs:$(THREATSTRYKER_VERSION)
-	docker image rm quay.io/deepfenceio/deepfence_docs:$(THREATSTRYKER_VERSION)
+build-local: sync-local
+	$(MAKE) -C docs build
+
+build-docker:
+	docker run --rm -t \
+		-e HOST_UID=$(HOST_UID) \
+		-e HOST_GID=$(HOST_GID) \
+		-e COREPACK_ENABLE_DOWNLOAD_PROMPT=0 \
+		-v "$(CURDIR):/workspace" \
+		-w /workspace \
+		$(DOCKER_IMAGE) bash -lc "\
+			set -euo pipefail; \
+			apt-get update; \
+			apt-get install -y --no-install-recommends git make perl ca-certificates passwd; \
+			rm -rf /var/lib/apt/lists/*; \
+			corepack enable; \
+			corepack prepare yarn@$(DOCKER_YARN_VERSION) --activate; \
+			if ! getent group \"\$$HOST_GID\" >/dev/null 2>&1; then groupadd -g \"\$$HOST_GID\" hostgroup; fi; \
+			if ! getent passwd \"\$$HOST_UID\" >/dev/null 2>&1; then useradd -m -u \"\$$HOST_UID\" -g \"\$$HOST_GID\" -s /bin/bash hostuser; fi; \
+			BUILD_USER=\$$(getent passwd \"\$$HOST_UID\" | cut -d: -f1); \
+			su \"\$$BUILD_USER\" -s /bin/bash -c 'make sync-local build-local'"
+
+run: run-local
+
+run-local: sync-local
+	$(MAKE) -C docs run
+
+clean:
+	$(MAKE) -C docs clean

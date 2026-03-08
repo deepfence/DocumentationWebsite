@@ -14,10 +14,6 @@
         path = product-docs/FlowMeter
         url = https://github.com/deepfence/FlowMeter
         branch = main
-[submodule "product-docs/ThreatStryker-docs"]
-        path = product-docs/ThreatStryker-docs
-        url = https://github.com/deepfence/ThreatStryker-docs
-        branch = main
 [submodule "product-docs/YaraHunter"]
         path = product-docs/YaraHunter
         url = https://github.com/deepfence/YaraHunter

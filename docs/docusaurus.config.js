@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer').themes.dracula;
 const config = {
   title: 'Deepfence Community',
   tagline: 'Security Observability for Cloud Native Applications',
-  url: 'https://community.deepfence.io',
+  url: 'https://threatmapper.org',
   baseUrl: '/',
 
   onBrokenLinks: 'warn',
@@ -33,7 +33,6 @@ const config = {
           
           editUrl: ({ versionDocsDirPath, docPath, locale }) => {
             const repoMain = {
-              threatstryker:  'https://github.com/deepfence/ThreatStryker-docs',
               packetstreamer: 'https://github.com/deepfence/PacketStreamer',
               flowmeter:      'https://github.com/deepfence/FlowMeter',
               yarahunter:     'https://github.com/deepfence/YaraHunter',
@@ -79,8 +78,8 @@ const config = {
       /* Note that markdown documents outside of the docs tree are not processed for frontmatter metadata 
          Additionally, metadata is only applied in full client builds of the site */
       metadata: [
-        { name: 'keywords', content: 'deepfence,documentation,howto,threatmapper,threatstryker,secretscanner,packetstreamer,flowmeter,yarahunter,ebpfguard,security,secops,devsecops,appsec' },
-        { property: 'og:keywords', content: 'deepfence,documentation,howto,threatmapper,threatstryker,secretscanner,packetstreamer,flowmeter,yarahunter,ebpfguard,security,secops,devsecops,appsec' },
+        { name: 'keywords', content: 'deepfence,documentation,howto,threatmapper,secretscanner,packetstreamer,flowmeter,yarahunter,ebpfguard,security,secops,devsecops,appsec' },
+        { property: 'og:keywords', content: 'deepfence,documentation,howto,threatmapper,secretscanner,packetstreamer,flowmeter,yarahunter,ebpfguard,security,secops,devsecops,appsec' },
         { name: 'image', content: '/img/social/deepfence.jpg' },
         { property: 'og:image', content: '/img/social/deepfence.jpg' }
       ],
@@ -103,10 +102,6 @@ const config = {
           {
             to: '/',
             label: 'Community',
-          },
-          {
-            to: 'https://deepfence.io/threatstryker',
-            label: 'Enterprise',
           },
           {
             type: 'dropdown',
@@ -145,14 +140,6 @@ const config = {
                 type: 'html',
                 value: '<div class="nav-dropdown-title">Enterprise</div>',
               },
-              {
-                type: 'html',
-                value: '<a class="dropdown__link" href="/threatstryker/docs">ThreatStryker</a>',
-              },
-              {
-                type: 'html',
-                value: '<a class="dropdown__link" href="/threatstryker/docs/cloud">Deepfence Cloud</a>',
-              },
             ],
           },
           {
@@ -160,10 +147,10 @@ const config = {
             position: 'left',
           },
           {
-            href: 'https://deepfence.io',
+            href: 'https://threatmapper.org',
             position: 'right',
             className: 'header-deepfence-link',
-            'aria-label': 'deepfence.io',
+            'aria-label': 'threatmapper.org',
           },
           {
             href: 'https://github.com/deepfence',
@@ -249,33 +236,10 @@ const config = {
               },
             ],
           },
-          {
-            title: 'Enterprise',
-            items: [
-              {
-                label: 'ThreatStryker',
-                href: 'https://deepfence.io/threatstryker',
-              },
-              {
-                html: '<a class="footer__link-item" href="/threatstryker/docs">ThreatStryker</a>',
-              },
-              {
-                label: 'Deepfence Cloud',
-                href: 'https://deepfence.cloud',
-              },
-              {
-                html: '<a class="footer__link-item" href="/threatstryker/docs/cloud">Deepfence Cloud Docs</a>',
-              },
-            ],
-          },
 
           {
             title: 'More',
             items: [
-              {
-                label: 'Blog',
-                href: 'https://deepfence.io/blog',
-              },
               {
                 label: 'GitHub',
                 href: 'https://github.com/deepfence',
@@ -301,11 +265,6 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
-  plugins: [
-    ['./df-bigpicture-plugin', {
-      trackingID: '1523'
-    }], 
-  ],
 };
 
 module.exports = config;

@@ -9,7 +9,6 @@ my $product = shift @ARGV;
 # Elements to add to the frontmatter, per product
 # For reference: https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter
 my %image = (
-  threatstryker => "/img/social/threatstryker.jpg",
   secretscanner => "/img/social/secretscanner.jpg",
   packetstreamer => "/img/social/packetstreamer.jpg",
   flowmeter => "/img/social/flowmeter.jpg",
@@ -18,7 +17,6 @@ my %image = (
 );
 
 my %keywords = (
-  threatstryker => "[vulnerability, threat, appsecurity, CVE, MITRE, TTP, supply chain, graph, attack path, eBPF, attack signal, indicator of compromise]",
   secretscanner => "[secret, secret scanning, token, key, password, container, image]",
   packetstreamer => "[tcpdump, distributed, remote, pcap, packet]",
   flowmeter => "[pcap, packet, ML, machine learning]",
